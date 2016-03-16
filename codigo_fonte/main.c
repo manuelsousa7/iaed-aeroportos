@@ -1,6 +1,6 @@
 /*                                                         .:INSTITUTO SUPERIOR TECNICO:.
                                             Programa Realizado Por:
-                                                     - Gonçalo Marques ()
+                                                     - Gonçalo Marques (84719)
                                                      - Manuel Sousa (84740)
                                             Tema: Redes de Aeroportos
                                             Curso: Licenciatura de Engenharia Informática e Computadores (LEIC-T)
