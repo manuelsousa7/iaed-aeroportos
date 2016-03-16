@@ -8,4 +8,9 @@ int main()
 	return 1;
 }
 
-ola
+int achas(int a,int b)
+{
+
+	printf("%d",a+b);
+	return a+b;
+}
