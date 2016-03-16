@@ -4,6 +4,8 @@
 
 int main()
 {
-	lol
+	lel
 	return 1;
 }
+
+ola
