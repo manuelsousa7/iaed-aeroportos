@@ -8,8 +8,4 @@ int main()
 	return 1;
 }
 
-int achas()
-{
-	int a;
-	cout << a;
-}
+ola
