@@ -2,15 +2,6 @@
 	"folders":
 	[
 		{
-			"path": "input"
-		},
-		{
-			"path": "comparador_outputs"
-		},
-		{
-			"path": "casos_teste"
-		},
-		{
 			"path": "codigo_fonte"
 		}
 	]
