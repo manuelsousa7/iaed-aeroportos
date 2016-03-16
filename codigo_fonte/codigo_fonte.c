@@ -7,3 +7,9 @@ int main()
 	lel
 	return 1;
 }
+
+int achas()
+{
+	int a;
+	cout << a;
+}
