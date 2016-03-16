@@ -7,32 +7,16 @@
                                             Cadeira: Introdução aos Algoritmos e Estruturas de Dados 
                                             Data de Entrega: 02/04/2016
 */                       
-
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-
-#define MAXSTRLEN 100
-
-char leString();
+#include "constantes.h"
+#include "funcoes_comandos.h"
+#include "funcoes_auxiliares.h"
+#include "funcoes_algoritmos.h"
 
 int main()
 {
 	
 	return 0;
-}
-
-char leString(){
-	char str[MAXSTRLEN], c;
-	int i = 0;
-
-	if ((c = getchar()) == '\n')
-		c = getchar();
-	while (c != '\n' && c != EOF){
-		str[i++] = c;
-		c = getchar();
-	}
-	str[i] = '\0';
-	
-	return str;
 }
