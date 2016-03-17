@@ -20,7 +20,7 @@ int main()
 	char c, string_input[MAXAEROPORTOID];
 	short int num_input;
 
-	switch (c=getchar()){
+	switch (c = getchar()){
 		case 'A':
 			scanf("%s",&string_input);
 			scanf("%hd", &num_input);

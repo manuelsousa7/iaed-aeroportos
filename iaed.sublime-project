@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "codigo_fonte"
+		},
+		{
+			"path": "casos_teste"
 		}
 	]
 }
