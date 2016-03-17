@@ -1,7 +1,13 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-
-#define MAXSTRLEN 100
-#define MAXAEROPORTOS 1000
+#define MAXAEROPORTOID 4
+#define MAXAEROPORTOS 1001
 #define COMANDOS "AIFGRSNPQVCOLX"
+
+typedef struct{
+	char id[4];
+	long int capacidade;
+	bool estado = true;
+} Aeroporto;
+
+unsigned short int numero_aeroportos;
+
+Aeroporto grafo[MAXAEROPORTOS][MAXAEROPORTOS];

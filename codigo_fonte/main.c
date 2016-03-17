@@ -9,6 +9,7 @@
 */
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include <math.h>
 #include "constantes.h"
 #include "funcoes_comandos.h"
@@ -16,6 +17,36 @@
 
 int main()
 {
-	
+	switch (cena){
+		case 'A':
+			break;
+		case 'I':
+			break;
+		case 'F':
+			break;
+		case 'G':
+			break;
+		case 'R':
+			break;
+		case 'S':
+			break;
+		case 'N':
+			break;
+		case 'P':
+			break;
+		case 'Q':
+			break;
+		case 'V':
+			break;
+		case 'C':
+			break;
+		case 'O':
+			break;
+		case 'L':
+			break;
+		case 'X':
+			break;
+	}		
+
 	return 0;
 }
