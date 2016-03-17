@@ -17,8 +17,17 @@
 
 int main()
 {
-	switch (cena){
+	char c, string_input[MAXAEROPORTOID];
+	short int num_input;
+
+	switch (c=getchar()){
 		case 'A':
+			scanf("%s",&string_input);
+			scanf("%hd", &num_input);
+			adiciona(grafo, numero_aeroportos, string_input, num_input); //o indice em que se inicializam os valores
+			//do aeroporto e "numero_aeroportos" depois incrementa-se;			
+			numero_aeroportos++;
+			
 			break;
 		case 'I':
 			break;
