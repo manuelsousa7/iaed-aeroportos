@@ -5,9 +5,9 @@
 
 typedef struct{
 	char id[4];
-	short int capacidade;
+	int capacidade;
 	bool estado;
-	short int crono;
+	int crono;
 	int partem;
 	int chegam;
 } Aeroporto;

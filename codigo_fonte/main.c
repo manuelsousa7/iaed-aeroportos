@@ -19,29 +19,29 @@
 
 int main()
 {
-	short int int1_input,int2_input,index_1,index_2;
+	int int1_input,int2_input,index_1,index_2;
 	char str1_input[4],str2_input[4];
 	char c;
-	unsigned short int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
+	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	Aeroporto aeroportos[MAXAEROPORTOS];
 	while (1){
 		c = getchar();
 		switch (c){
 			case 'A':
-				scanf("%s %hd",str1_input,&int1_input);
-				aeroportos[numero_aeroportos] = cria_aeroporto(int1_input,str1_input, numero_aeroportos);
-				numero_aeroportos++;
+				scanf("%s %d",str1_input,&int1_input);
+				aeroportos[numero_aeroportos] = CriaAeroporto(int1_input,str1_input, numero_aeroportos);
+				numero_aeroportos++;	
 				break;
 			case 'I':
-				scanf("%s %hd",str1_input,&int1_input);
+				scanf("%s %d",str1_input,&int1_input);
 				index_1 = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
-				qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 				if(index_1!=-1)
 					aeroportos[index_1].capacidade += int1_input;
 				else
 					printf("*Capacidade de %s inalterada\n",str1_input);
 				break;
 			case 'F':
+				//printf("->%d",numero_aeroportos);
 				scanf("%s %s", str1_input, str2_input);
 				index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
 				index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
@@ -67,14 +67,21 @@ int main()
 			case 'O':
 				break;
 			case 'L':
+				scanf("%d",&int1_input);
+				if(int1_input==0){
+					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
+					ImprimeAeroportos(aeroportos,numero_aeroportos);}
+				else if(int1_input==1){
+					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+					ImprimeAeroportos(aeroportos,numero_aeroportos);}
+				else{//histograma
 
+				}
 				break;
 		}		
 		if(c=='X')
 			break;
 	}
-	printf("%s %d\n",aeroportos[0].id,aeroportos[0].capacidade);
-	printf("%s %d\n",aeroportos[1].id,aeroportos[1].capacidade);
-	printf("%s %d\n",aeroportos[2].id,aeroportos[2].capacidade);
+	printf("%d",numero_aeroportos);
 	return 0;
 }
