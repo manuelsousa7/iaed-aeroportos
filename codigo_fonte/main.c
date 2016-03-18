@@ -20,7 +20,7 @@
 int main()
 {
 	short int int1_input, int2_input, index_1, index_2, n_going_coming[2];
-	char str1_input[4], str2_input[4];
+	char str1_input[4], str2_input[4], popular[4];
 	char c;
 	unsigned short int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	Aeroporto aeroportos[MAXAEROPORTOS];
@@ -61,10 +61,12 @@ int main()
 				break;
 
 			case 'N':
-				n_going_coming = RetornaVoo(grafo, aeroportos, numero_aeroportos);
+				RetornaVoo(grafo, aeroportos, numero_aeroportos, n_going_coming, str1_input, str2_input);
+				printf("Voos entre cidades %s : %s : %d : %d", str1_input, str2_input, n_going_coming[0], n_going_coming[1])
 				break;
 
 			case 'P':
+				VooPopular(grafo, aeroportos, numero_aeroportos, popular);
 				break;
 
 			case 'Q':
