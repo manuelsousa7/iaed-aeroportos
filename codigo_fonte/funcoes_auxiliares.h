@@ -1,4 +1,4 @@
-int PesquisaBinaria (int x, int v[], int e, int d){ 
+/*int PesquisaBinaria (int x, int v[], int e, int d){ 
 	int i = (e + d)/2;	
 	if (v[i] == x)
 		return i;	
@@ -7,9 +7,29 @@ int PesquisaBinaria (int x, int v[], int e, int d){
 	else if (v[i] < x)
 		return PesquisaBinaria(x, v, i+1, d);
 	return PesquisaBinaria(x, v, e, i-1);
+}*/
+
+int OrdenaAeroportosNome(const void *a, const void *b) 
+{ 
+    Aeroporto *ia = (Aeroporto *)a;
+    Aeroporto *ib = (Aeroporto *)b;
+    return strcmp(ia->id, ib->id);
+} 
+
+int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos){ 
+    qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+    int i;
+    Aeroporto key, *res;
+    strcpy(key.id ,a_procurar);
+    res = bsearch(&key, aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+    size_t index = res - aeroportos;
+    if (res == NULL)
+        return -1;
+    else
+        return index;
 }
 
-void quickSort(int valor[], int esquerda, int direita)
+/*void quickSort(int valor[], int esquerda, int direita)
 {
     int i, j, x, y;
     i = esquerda;
@@ -33,4 +53,5 @@ void quickSort(int valor[], int esquerda, int direita)
         quickSort(valor, esquerda, j);
     if(i < direita)
         quickSort(valor,  i, direita);
-}
+}*/
+
