@@ -1,30 +1,38 @@
+#include "funcoes_auxiliares.h"
 
 //Cria um novo aeroporto
-Aeroporto cria_aeroporto(int capacidade,char id[],int numero_aeroportos)
+Aeroporto CriaAeroporto(int capacidade,char id[],int numero_aeroportos)
 {
 	Aeroporto aeroporto;
 	aeroporto.capacidade=capacidade;
 	aeroporto.estado=true;
+	aeroporto.partem=0;
+	aeroporto.chegam=0;
 	aeroporto.crono=numero_aeroportos;
 	strcpy(aeroporto.id,id);
 	return aeroporto;
 }
-
+/*
 //Altera a capacidade do aeroporto
-Aeroporto altera_capacidade_aeroporto(int capacidade,char id[])
+
+Aeroporto AlteraCapacidadeAeroporto(int capacidade,char id[])
 {
-	Aeroporto aeroporto;
-	aeroporto.capacidade=capacidade;
-	aeroporto.estado=true;
-	strcpy(aeroporto.id,id);
-	return aeroporto;
+
+	
+}*/
+
+void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
+{
+	int i;
+	for (i = 0 ; i < numero_aeroportos ; i++)
+		printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
 }
 
 //Adiciona um voo de ida ou de ida e volta
-//					        grafo      aeroportos           numero de aeroportos     1 se for ida e volta    1 se for remover
-void AdicionaRemoveVoo(int grafo[], Aeroporto aeroportos, int numero_aeroportos, bool ida_volta, bool remover){
+//					               grafo                                 numero de aeroportos  1 se for ida e volta   1 se for remover
+void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover){
 
-    short int index_1, index_2;
+    int index_1, index_2;
     char str1_input[4], str2_input[4];
 
     scanf("%s %s", str1_input, str2_input);
@@ -63,22 +71,24 @@ void AdicionaRemoveVoo(int grafo[], Aeroporto aeroportos, int numero_aeroportos,
     }
 }
 
-void RetornaVoo(int grafo[], Aeroporto aeroportos, int numero_aeroportos){
-	short int index_1, index_2;
+void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos){
+	int index_1, index_2;
     char str1_input[4], str2_input[4];
 
     scanf("%s %s", str1_input, str2_input);
     index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
     index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
 
-    printf("Voos entre cidades %s : %s : %d : %d", str1_input, str2_input, vetor_retorno[0], vetor_retorno[1]);
+    printf("Voos entre cidades %s : %s : %d : %d", str1_input, str2_input, grafo[index_2][index_1], grafo[index_1][index_2]);
 }
 
-void AeroportoPopular(Aeroporto aeroportos, int numero_aeroportos, char popular[]){
-    int iterador, maior = 0;
+void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
+    int iterador, maior = 0, indice = 0;
 
     for (iterador = 0; iterador < numero_aeroportos; iterador++)
-        if (maior < (aeroportos[i].partem + aeroportos[i].entram))
-            maior = (aeroportos[i].partem + aeroportos[i].entram);
-    return maior;
+        if (maior < (aeroportos[iterador].partem + aeroportos[iterador].chegam))
+            maior = (aeroportos[iterador].partem + aeroportos[iterador].chegam);
+            indice = iterador;
+
+    printf("%s", aeroportos[indice].id);
 }

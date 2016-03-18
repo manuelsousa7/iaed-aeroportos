@@ -16,28 +16,30 @@
 #include "funcoes_comandos.h"
 #include "funcoes_auxiliares.h"
 
+int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
+void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover);
 
 int main()
 {
-	short int int1_input, int2_input, index_1, index_2;
-	char str1_input[MAXID], str2_input[MAXID], popular[MAXID];
+	int int1_input, int2_input, index_1, index_2;
+	char str1_input[MAXID], str2_input[MAXID];
 	char c;
-	unsigned short int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
+	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	Aeroporto aeroportos[MAXAEROPORTOS];
+	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
 	while (1){
 		c = getchar();
 		switch (c){
 			case 'A':
-				scanf("%s %hd",str1_input,&int1_input);
-				aeroportos[numero_aeroportos] = cria_aeroporto(int1_input,str1_input, numero_aeroportos);
-				numero_aeroportos++;
+				scanf("%s %d",str1_input,&int1_input);
+				aeroportos[numero_aeroportos] = CriaAeroporto(int1_input,str1_input, numero_aeroportos);
+				numero_aeroportos++;	
 				break;
 
 			case 'I':
-				scanf("%s %hd",str1_input,&int1_input);
+				scanf("%s %d",str1_input,&int1_input);
 				index_1 = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
 				qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
-
 				if(index_1!=-1)
 					aeroportos[index_1].capacidade += int1_input;
 				else
@@ -45,27 +47,27 @@ int main()
 				break;
 
 			case 'F':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, true, false);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA);
 				break;
 
 			case 'G':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, false, false);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA);
 				break;
 
 			case 'R':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, false, true);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE);
 				break;
 
 			case 'S':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, true, true);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE);
 				break;
 
 			case 'N':
-				RetornaVoo(grafo, aeroportos, numero_aeroportos, n_going_coming, str1_input, str2_input);
+				RetornaVoo(grafo, aeroportos, numero_aeroportos);
 				break;
 
 			case 'P':
-				AeroportoPopular(grafo, aeroportos, numero_aeroportos, popular);
+				AeroportoPopular(aeroportos, numero_aeroportos);
 				break;
 
 			case 'Q':
@@ -81,14 +83,20 @@ int main()
 				break;
 
 			case 'L':
+				scanf("%d",&int1_input);
+				if(int1_input==0){
+					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
+					ImprimeAeroportos(aeroportos,numero_aeroportos);}
+				else if(int1_input==1){
+					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+					ImprimeAeroportos(aeroportos,numero_aeroportos);}
+				else{//histograma
 
+				}
 				break;
 		}		
 		if(c=='X')
 			break;
 	}
-	printf("%s %d\n",aeroportos[0].id,aeroportos[0].capacidade);
-	printf("%s %d\n",aeroportos[1].id,aeroportos[1].capacidade);
-	printf("%s %d\n",aeroportos[2].id,aeroportos[2].capacidade);
 	return 0;
 }
