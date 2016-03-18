@@ -29,14 +29,14 @@ int main(int argc, char **argv)
 		switch (c){
 			case 'A':
 				scanf("%s %hd",&str1_input,&int1_input);
-				aeroportos[numero_aeroportos] = cria_aeroporto(int1_input,str1_input);
+				aeroportos[numero_aeroportos] = cria_aeroporto(int1_input,str1_input, numero_aeroportos);
 				numero_aeroportos++;
 				break;
 			case 'I':
 				scanf("%s %hd",str1_input,&int1_input);
-				index_1 = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
-				if(index_1!=-1)
-					aeroportos[index_1].capacidade+=int1_input;
+				index = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
+				if(index!=-1)
+					aeroportos[index].capacidade += int1_input;
 				else
 					printf("*Capacidade de %s inalterada\n",str1_input);
 				break;
