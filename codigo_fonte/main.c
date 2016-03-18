@@ -16,6 +16,8 @@
 #include "funcoes_comandos.h"
 #include "funcoes_auxiliares.h"
 
+int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
+void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos, int numero_aeroportos, int ida_volta, int remover);
 
 int main()
 {

@@ -29,9 +29,9 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 
 //Adiciona um voo de ida ou de ida e volta
 //					 grafo        numero de aeroportos     1 se for ida e volta    1 se for remover
-void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos, int numero_aeroportos, short int ida_volta, short int remover){
+void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos, int numero_aeroportos, int ida_volta, int remover){
 
-    short int index_1, index_2;
+    int index_1, index_2;
     char str1_input[4], str2_input[4];
 
     scanf("%s %s", str1_input, str2_input);
@@ -64,7 +64,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos, int num
 }
 
 void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos, int numero_aeroportos, int vetor_retorno[], char string_retorno_1[], char string_retorno_2[]){
-	short int index_1, index_2;
+	int index_1, index_2;
     char str1_input[4], str2_input[4];
 
     scanf("%s %s", str1_input, str2_input);
