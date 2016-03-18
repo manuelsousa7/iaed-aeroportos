@@ -38,28 +38,32 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos, int num
     index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
     index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
 
-    if (index_1 != -1 || index_2 != -1)
+    if ((index_1 != -1) || (index_2 != -1)){
     	if (remover)
         	grafo[index_2][index_1] -= 1;
         else
         	grafo[index_2][index_1] += 1;
 
-        if (ida_volta)
+        if (ida_volta){
             if (remover)
 	        	grafo[index_1][index_2] -= 1;
 	        else
 	        	grafo[index_1][index_2] += 1;
+	    }
+	}
     else {
-        if(index_1 == -1)
+        if(index_1 == -1){
         	if (remover)
         		printf("*Impossivel remover voo RT %s %s", str1_input, str2_input);
         	else
         		printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
-        if(index_2 == -1)
+        }
+        if(index_2 == -1){
             if (remover)
         		printf("*Impossivel remover voo RT %s %s", str1_input, str2_input);
         	else
         		printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
+        }
     }
 }
 
