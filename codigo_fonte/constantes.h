@@ -8,5 +8,3 @@ typedef struct{
 	long int capacidade;
 	bool estado;
 } Aeroporto;
-
-unsigned short int numero_aeroportos;

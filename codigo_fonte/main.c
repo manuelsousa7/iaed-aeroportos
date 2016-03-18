@@ -19,27 +19,33 @@
 
 int main(int argc, char **argv)
 {
-	short int int1_input,int2_input,index;
+	short int int1_input,int2_input,index_1;
 	char str1_input[4],str2_input[4];
 	char c;
 	unsigned short int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	Aeroporto aeroportos[MAXAEROPORTOS];
-	while (c = getchar()){
+	while (1){
+		c = getchar();
 		switch (c){
 			case 'A':
-				scanf("%s %hd",str1_input,&int1_input);
-				aeroportos[numero_aeroportos] = adiciona_aeroporto(int1_input,str1_input);
+				scanf("%s %hd",&str1_input,&int1_input);
+				aeroportos[numero_aeroportos] = cria_aeroporto(int1_input,str1_input);
 				numero_aeroportos++;
 				break;
 			case 'I':
 				scanf("%s %hd",str1_input,&int1_input);
-				index = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
-				if(index!=-1)
-					aeroportos[index].capacidade+=int1_input;
+				index_1 = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
+				if(index_1!=-1)
+					aeroportos[index_1].capacidade+=int1_input;
 				else
 					printf("*Capacidade de %s inalterada\n",str1_input);
 				break;
 			case 'F':
+				scanf("%s %s", &str1_input, &str2_input);
+				index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
+				index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
+				grafo[index_2][index_1] += 1;
+				grafo[index_1][index_2] += 1;
 				break;
 			case 'G':
 				break;

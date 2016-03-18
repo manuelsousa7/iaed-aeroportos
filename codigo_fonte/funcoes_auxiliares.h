@@ -9,6 +9,8 @@
 	return PesquisaBinaria(x, v, e, i-1);
 }*/
 
+
+//Ordena os aeroportos por ordem alfabetica
 int OrdenaAeroportosNome(const void *a, const void *b) 
 { 
     Aeroporto *ia = (Aeroporto *)a;
@@ -16,6 +18,7 @@ int OrdenaAeroportosNome(const void *a, const void *b)
     return strcmp(ia->id, ib->id);
 } 
 
+//Usa pesquisa binaria para procurar o aeroporto com o id correspondente
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos){ 
     qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
     int i;
