@@ -16,6 +16,6 @@ typedef struct{
 	int chegam;
 } Aeroporto;
 
-
-
-
+int OrdenaAeroportosCronologicamente(const void *a, const void *b) ;
+int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
+void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover);

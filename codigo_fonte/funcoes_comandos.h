@@ -1,6 +1,3 @@
-//#include "constantes.h"
-#include "funcoes_auxiliares.h"
-
 //Cria um novo aeroporto
 void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos)
 {
@@ -35,7 +32,6 @@ void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[
     scanf("%s %d", str1_input, &capacidade);
     index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
     soma = SomaVooAmbos(grafo, numero_aeroportos, index_1);
-    //                |||||||||||||||||| --> se a capacidade for negativa??
     if(index_1!=-1 && soma >= capacidade && aeroportos[index_1].estado)
         aeroportos[index_1].capacidade += capacidade;
     else

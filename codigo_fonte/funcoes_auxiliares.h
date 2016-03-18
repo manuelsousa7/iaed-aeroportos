@@ -8,12 +8,6 @@ int OrdenaAeroportosNome(const void *a, const void *b)
 
 
 
-
-
-
-//Os aeroportos nao estao ja ordenados por ordem cronologica??
-//-----------------------------------------
-
 int OrdenaAeroportosCronologicamente(const void *a, const void *b) 
 { 
     Aeroporto *ia = (Aeroporto *)a;
@@ -22,11 +16,6 @@ int OrdenaAeroportosCronologicamente(const void *a, const void *b)
 }
 
 //-----------------------------------------
-
-
-
-
-
 
 //Usa pesquisa binaria para procurar o aeroporto com o id correspondente
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos){ 

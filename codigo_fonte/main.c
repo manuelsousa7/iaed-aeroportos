@@ -16,13 +16,9 @@
 #include "funcoes_comandos.h"
 #include "funcoes_auxiliares.h"
 
-int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
-void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover);
-
 int main()
 {
-	int int1_input, int2_input, index_1, index_2;
-	char str1_input[MAXID], str2_input[MAXID];
+	int int1_input;
 	char c;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	Aeroporto aeroportos[MAXAEROPORTOS];
@@ -88,7 +84,8 @@ int main()
 				scanf("%d",&int1_input);
 				if(int1_input==0){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
-					ImprimeAeroportos(aeroportos,numero_aeroportos);}
+					ImprimeAeroportos(aeroportos,numero_aeroportos);
+				}
 				else if(int1_input==1){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);}
