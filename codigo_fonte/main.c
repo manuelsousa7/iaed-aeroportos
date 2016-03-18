@@ -55,7 +55,6 @@ int main()
 			case 'R':
 				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE);
 				break;
-
 			case 'S':
 				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE);
 				break;
@@ -83,14 +82,16 @@ int main()
 			case 'L':
 				scanf("%d",&int1_input);
 				if(int1_input==0){
-					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
+					//qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
+					InsertionSortAeroporto(aeroportos,numero_aeroportos);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);
 				}
 				else if(int1_input==1){
-					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
-					ImprimeAeroportos(aeroportos,numero_aeroportos);}
+					//qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+					ImprimeAeroportos(aeroportos,numero_aeroportos);
+				}
 				else{//histograma
-
+					HistogramaImprime(aeroportos,numero_aeroportos);
 				}
 				break;
 		}		

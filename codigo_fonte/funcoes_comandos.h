@@ -108,3 +108,22 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 
     printf("%s\n", aeroportos[indice].id);
 }
+
+void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
+	Histograma hist[MAXAEROPORTOS];
+    int n_hist=0;
+    int i;
+    for (i=0;i<numero_aeroportos;i++)
+    {
+        if(PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist)==-1)
+        {
+            hist[n_hist].soma=aeroportos[i].soma;
+            hist[n_hist].n=0;
+        }
+        else
+            hist[n_hist].n++;
+    }
+    for(i=0;i<n_hist;i++)
+        printf("%d %d", hist[i].soma,hist[i].n);
+
+}
