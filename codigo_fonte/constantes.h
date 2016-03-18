@@ -5,7 +5,9 @@
 
 typedef struct{
 	char id[4];
-	long int capacidade;
+	short int capacidade;
 	bool estado;
 	short int crono;
+	int partem;
+	int chegam;
 } Aeroporto;

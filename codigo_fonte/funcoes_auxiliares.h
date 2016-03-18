@@ -23,12 +23,10 @@ int OrdenaAeroportosCronologicamente(const void *a, const void *b)
 { 
     Aeroporto *ia = (Aeroporto *)a;
     Aeroporto *ib = (Aeroporto *)b;
-    return ia->id_n > ib->id_n;
+    return ia->crono > ib->crono;
 } 
 
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos){ 
-    qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
-    int i;
     Aeroporto key, *res;
     strcpy(key.id ,a_procurar);
     res = bsearch(&key, aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
