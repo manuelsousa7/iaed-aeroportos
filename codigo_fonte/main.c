@@ -19,8 +19,8 @@
 
 int main()
 {
-	short int int1_input, int2_input, index_1, index_2, n_going_coming[2];
-	char str1_input[4], str2_input[4], popular[4];
+	short int int1_input, int2_input, index_1, index_2;
+	char str1_input[MAXID], str2_input[MAXID], popular[MAXID];
 	char c;
 	unsigned short int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	Aeroporto aeroportos[MAXAEROPORTOS];
@@ -45,28 +45,27 @@ int main()
 				break;
 
 			case 'F':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 1, 0);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, true, false);
 				break;
 
 			case 'G':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 0, 0);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, false, false);
 				break;
 
 			case 'R':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 0, 1);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, false, true);
 				break;
 
 			case 'S':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 1, 1);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, true, true);
 				break;
 
 			case 'N':
 				RetornaVoo(grafo, aeroportos, numero_aeroportos, n_going_coming, str1_input, str2_input);
-				printf("Voos entre cidades %s : %s : %d : %d", str1_input, str2_input, n_going_coming[0], n_going_coming[1])
 				break;
 
 			case 'P':
-				VooPopular(grafo, aeroportos, numero_aeroportos, popular);
+				AeroportoPopular(grafo, aeroportos, numero_aeroportos, popular);
 				break;
 
 			case 'Q':
