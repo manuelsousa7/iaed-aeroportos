@@ -43,7 +43,7 @@ int PesquisaBinariaHistograma(Histograma hist[], int n, int n_hist){
         return index;
 }
 
-void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos)
+void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, int crono)
 {
     int i, j;
     Aeroporto atual;
@@ -51,7 +51,7 @@ void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos)
     {
         atual = aeroportos[i];
         j = i - 1;
-        while ((j >= 0) && (atual.crono < aeroportos[j].crono))
+        while (((j >= 0) && (atual.crono < aeroportos[j].crono && crono==1)) || ((j >= 0) && (atual.id > aeroportos[j].id && crono==0)))
         {
             aeroportos[j + 1] = aeroportos[j];
             j = j - 1;

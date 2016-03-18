@@ -82,12 +82,13 @@ int main()
 			case 'L':
 				scanf("%d",&int1_input);
 				if(int1_input==0){
-					//qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
-					InsertionSortAeroporto(aeroportos,numero_aeroportos);
+					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
+					//InsertionSortAeroporto(aeroportos,numero_aeroportos,1);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);
 				}
 				else if(int1_input==1){
-					//qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
+					//InsertionSortAeroporto(aeroportos,numero_aeroportos,0);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);
 				}
 				else{//histograma
