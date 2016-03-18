@@ -19,7 +19,7 @@
 
 int main()
 {
-	short int int1_input, int2_input, index_1, index_2;
+	short int int1_input, int2_input, index_1, index_2, n_going_coming[2];
 	char str1_input[4], str2_input[4];
 	char c;
 	unsigned short int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
@@ -32,6 +32,7 @@ int main()
 				aeroportos[numero_aeroportos] = cria_aeroporto(int1_input,str1_input, numero_aeroportos);
 				numero_aeroportos++;
 				break;
+
 			case 'I':
 				scanf("%s %hd",str1_input,&int1_input);
 				index_1 = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
@@ -42,41 +43,42 @@ int main()
 				else
 					printf("*Capacidade de %s inalterada\n",str1_input);
 				break;
-			case 'F':
-				AdicionaVoo(grafo, numero_aeroportos, 1, 0);
 
+			case 'F':
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 1, 0);
 				break;
+
 			case 'G':
-				AdicionaVoo(grafo, numero_aeroportos, 0, 0);
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 0, 0);
 				break;
+
 			case 'R':
-				scanf("%s %s", str1_input, str2_input);
-				index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
-				index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
-				
-				if (index_1 != -1 || index_2 != -1)
-					grafo[index_2][index_1] -= 1;
-				else {
-					if(index_1 == -1)
-						printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
-					if(index_2 == -1)
-						printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
-				}
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 0, 1);
 				break;
+
 			case 'S':
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, 1, 1);
 				break;
+
 			case 'N':
+				n_going_coming = RetornaVoo(grafo, aeroportos, numero_aeroportos);
 				break;
+
 			case 'P':
 				break;
+
 			case 'Q':
 				break;
+
 			case 'V':
 				break;
+
 			case 'C':
 				break;
+
 			case 'O':
 				break;
+
 			case 'L':
 
 				break;

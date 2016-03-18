@@ -22,7 +22,7 @@ Aeroporto altera_capacidade_aeroporto(int capacidade,char id[])
 
 //Adiciona um voo de ida ou de ida e volta
 //					 grafo        numero de aeroportos     1 se for ida e volta    1 se for remover
-void AdicionaVoo(int grafo[], int numero_aeroportos, short int ida_volta, short int remover){
+void AdicionaRemoveVoo(int grafo[], Aeroporto aeroportos, int numero_aeroportos, short int ida_volta, short int remover){
 
     short int index_1, index_2;
     char str1_input[4], str2_input[4];
@@ -35,17 +35,35 @@ void AdicionaVoo(int grafo[], int numero_aeroportos, short int ida_volta, short 
     	if (remover)
         	grafo[index_2][index_1] -= 1;
         else
-        	grafo[index_2][index_1] -= 1;
+        	grafo[index_2][index_1] += 1;
 
         if (ida_volta)
             if (remover)
-	        	grafo[index_2][index_1] -= 1;
+	        	grafo[index_1][index_2] -= 1;
 	        else
-	        	grafo[index_2][index_1] -= 1;
+	        	grafo[index_1][index_2] += 1;
     else {
         if(index_1 == -1)
-            printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
+        	if (remover)
+        		printf("*Impossivel remover voo RT %s %s", str1_input, str2_input);
+        	else
+        		printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
         if(index_2 == -1)
-            printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
+            if (remover)
+        		printf("*Impossivel remover voo RT %s %s", str1_input, str2_input);
+        	else
+        		printf("*Impossivel adicionar voo RT %s %s", str1_input, str2_input);
     }
+}
+
+int RetornaVoo(int grafo[], Aeroporto aeroportos, int numero_aeroportos){
+	short int index_1, index_2, vetor_retorno[2];
+    char str1_input[4], str2_input[4];
+
+    scanf("%s %s", str1_input, str2_input);
+    index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
+    index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
+
+    vetor_retorno = {grafo[index_2][index_1], grafo[index_1][index_2]};
+    return vetor_retorno;
 }
