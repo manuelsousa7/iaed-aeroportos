@@ -1,10 +1,22 @@
-# Introdução aos Algoritmos e Estruturas de Dados (Projeto 1)
+# Rede de Aeroportos (Projeto 1)
 
-Membros do Grupo:
+**Membros do Grupo:**
 - Gonçalo Marques
-- Manuel Sousa
+- Manuel Sousa (84740)
 
-# Código Fonte
+**Linguagem do Projeto:** C (gcc) <br/>
 
-Main: /codigo_font/main.c
-Linguagem: C
+**Cadeira:** Introdução aos Algoritmos e Estruturas de Dados 
+
+Para Compilar:
+==========
+
+```
+    make clean
+    make all
+```
+
+Código Fonte:
+==========
++ main.c:
+++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
