@@ -158,7 +158,7 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
 	index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
 	index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
 
-	printf("Voos entre cidades %s : %s : %d : %d\n", str1_input, str2_input, grafo[index_2][index_1], grafo[index_1][index_2]);
+	printf("Voos entre cidades %s:%s:%d:%d\n", str1_input, str2_input, grafo[index_2][index_1], grafo[index_1][index_2]);
 }
 
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
@@ -170,7 +170,7 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 			indice = iterador;
 		}
 
-	printf("%s\n", aeroportos[indice].id);
+	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].chegam,aeroportos[indice].partem);
 }
 
 void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
@@ -188,7 +188,7 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 			}
 		}
 
-	printf("%s\n", aeroportos[indice].id);
+	printf("Aeroporto com mais ligações %s:%d\n", aeroportos[indice].id,maior);
 }
 
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){

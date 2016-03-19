@@ -98,8 +98,3 @@ int main()
 	}
 	return 0;
 }
-
-// P
-// V
-// C
-// O
