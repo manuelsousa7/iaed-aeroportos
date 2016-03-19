@@ -67,7 +67,7 @@ int main()
 
 			case 'V':
 				//LOL fiz um vetor de dimensao 1 para o poder modificar dentro da funcao...
-				printf("Voo mais popular %s:%s:%d", popular[0].partida, popular[0].chegada, popular[0].voos);
+				printf("Voo mais popular %s:%s:%d\n", popular[0].partida, popular[0].chegada, popular[0].voos);
 				break;
 
 			case 'C':
