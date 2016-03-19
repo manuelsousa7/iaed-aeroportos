@@ -45,17 +45,32 @@ int PesquisaBinariaHistograma(Histograma hist[], int n, int n_hist){
 
 void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, int crono)
 {
-	int i, j;
-	Aeroporto atual;
-	for (i = 1; i < numero_aeroportos; i++)
-	{
-		atual = aeroportos[i];
-		j = i - 1;
-		while (((j >= 0) && (atual.crono < aeroportos[j].crono && crono==1)) || ((j >= 0) && (atual.id > aeroportos[j].id && crono==0)))
-		{
-			aeroportos[j + 1] = aeroportos[j];
-			j = j - 1;
-		}
-		aeroportos[j + 1] = atual;
-	}
+    int i, j;
+    Aeroporto atual;
+    for (i = 1; i < numero_aeroportos; i++)
+    {
+        atual = aeroportos[i];
+        j = i - 1;
+        while (((j >= 0) && (atual.crono < aeroportos[j].crono && crono==1)) || ((j >= 0) && (atual.id > aeroportos[j].id && crono==0)))
+        {
+            aeroportos[j + 1] = aeroportos[j];
+            j = j - 1;
+        }
+        aeroportos[j + 1] = atual;
+    }
+}
+
+
+
+
+void dfs(int grafo[][MAXAEROPORTOS],int node,int numero_aeroportos){
+ vis[node] = 1;
+ int i;
+ printf("\n%d",node);
+ for(i = 0; i < numero_aeroportos; i++) {
+   if(grafo[i][node]!=0 && !vis[i]) {
+    printf("\nola\n");
+     dfs(grafo,i,numero_aeroportos);
+   }
+ }
 }

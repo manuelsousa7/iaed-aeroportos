@@ -33,8 +33,10 @@ void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[
 void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 {
 	int i;
-	for (i = 0 ; i < numero_aeroportos ; i++)
-		printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
+	for (i = 0 ; i < numero_aeroportos; i++){
+        if(aeroportos[i].estado==true)
+		  printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
+    }
 }
 
 //Adiciona ou remove um voo de ida ou de ida e volta
@@ -191,20 +193,35 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 	Histograma hist[MAXAEROPORTOS];
-	int n_hist=0;
-	int index,i;
-	for (i=0;i<numero_aeroportos;i++){
-		index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
-		if(index==-1){
-			hist[n_hist].soma=aeroportos[i].soma;
-			hist[n_hist].n=1;
-			n_hist++;
-		}
-		else
-			hist[index].n++;
-	}
-	qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
-	for(i=0;i<n_hist;i++)
-		printf("%d:%d\n", hist[i].soma,hist[i].n);
+    int n_hist=0;
+    int index,i;
+    for (i=0;i<numero_aeroportos;i++){
+        if(aeroportos[i].estado==true){
+            index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
+            if(index==-1){
+                hist[n_hist].soma=aeroportos[i].soma;
+                hist[n_hist].n=1;
+                n_hist++;
+            }
+            else
+                hist[index].n++;
+        }
+    }
+    qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
+    for(i=0;i<n_hist;i++)
+        printf("%d:%d\n", hist[i].soma,hist[i].n);
+}
 
+void EncerraReabreAeroporto(Aeroporto aeroportos[],int numero_aeroportos,int encerra)
+{
+    char str1_input[MAXID];
+    int index;
+    scanf("%s",str1_input);
+    index=PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
+    if(encerra==1 && index!=-1)
+        aeroportos[index].estado=false;
+    else if(encerra==0 && index!=-1)
+        aeroportos[index].estado=true;
+    else
+        printf("*Aeroporto %s inexistente\n",str1_input);
 }
