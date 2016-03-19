@@ -76,11 +76,12 @@ int main()
 				break;
 
 			case 'C':
+				EncerraReabreAeroporto(aeroportos,numero_aeroportos,1);
 				break;
 
 			case 'O':
+				EncerraReabreAeroporto(aeroportos,numero_aeroportos,0);
 				break;
-
 			case 'L':
 				scanf("%d",&int1_input);
 				if(int1_input==0){
@@ -99,9 +100,14 @@ int main()
 				break;
 		}		
 		if(c=='X'){
-			printf("%ld:%d\n",total_voos,numero_aeroportos);
+			printf("%lld:%d\n",total_voos,numero_aeroportos);
 			break;
 		}
 	}
 	return 0;
 }
+
+// P
+// V
+// C
+// O

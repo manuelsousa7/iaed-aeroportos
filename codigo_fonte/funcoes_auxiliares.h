@@ -59,3 +59,18 @@ void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, int c
         aeroportos[j + 1] = atual;
     }
 }
+
+
+
+
+void dfs(int grafo[][MAXAEROPORTOS],int node,int numero_aeroportos){
+ vis[node] = 1;
+ int i;
+ printf("\n%d",node);
+ for(i = 0; i < numero_aeroportos; i++) {
+   if(grafo[i][node]!=0 && !vis[i]) {
+    printf("\nola\n");
+     dfs(grafo,i,numero_aeroportos);
+   }
+ }
+}
