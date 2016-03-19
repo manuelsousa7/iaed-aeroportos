@@ -25,7 +25,7 @@ int main()
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	long long int total_voos;
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
-	while (1){	
+	while (1){
 		c = getchar();
 		switch (c){
 			case 'A':
