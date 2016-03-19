@@ -24,8 +24,9 @@ typedef struct{
 
 typedef struct{
 	int voos;
-	char chegar_a[MAXID];
-	char sair_de[MAXID];
+	char partida[MAXID];
+	int partida_crono,
+	char chegada[MAXID];
 } Voo;
 
 int OrdenaAeroportosCronologicamente(const void *a, const void *b) ;
