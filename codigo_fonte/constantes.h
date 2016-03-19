@@ -4,11 +4,6 @@
 #define IDAEVOLTA true
 #define MAXID 4
 #define MAXAEROPORTOS 1001
-#define key(A) (A)
-#define less(A, B) (key(A) < key(B))
-#define exch(A, B) { Item t = A; A = B; B = t; }
-#define compexch(A, B) if (less(B, A)) exch(A, B)
-#define COMANDOS "AIFGRSNPQVCOLX"
 
 
 typedef struct{
@@ -25,6 +20,12 @@ typedef struct{
 	int soma;
 	int n;
 } Histograma;
+
+typedef struct{
+	int voos;
+	char chegar_a[MAXID];
+	char sair_de[MAXID];
+} Voo;
 
 int OrdenaAeroportosCronologicamente(const void *a, const void *b) ;
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);

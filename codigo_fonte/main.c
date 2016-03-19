@@ -19,6 +19,7 @@
 int main()
 {
 	Aeroporto aeroportos[MAXAEROPORTOS];
+	Voo voo_popular;
 	int int1_input;
 	char c;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
@@ -34,15 +35,6 @@ int main()
 
 			case 'I':
 				AlteraCapacidadeAeroporto(grafo, aeroportos, numero_aeroportos);
-				/*
-				scanf("%s %d",str1_input,&int1_input);
-				index_1 = PesquisaBinariaAeroportos(aeroportos,str1_input,numero_aeroportos);
-				qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
-				if(index_1!=-1)
-					aeroportos[index_1].capacidade += int1_input;
-				else
-					printf("*Capacidade de %s inalterada\n",str1_input);
-				*/
 				break;
 
 			case 'F':
@@ -73,6 +65,7 @@ int main()
 				break;
 
 			case 'V':
+				printf("%s:%s:%d\n",voo_popular.sair_de,voo_popular.chegar_a,voo_popular.voos);
 				break;
 
 			case 'C':
