@@ -1,11 +1,15 @@
 # Rede de Aeroportos (Projeto 1)
+=========
 
 Membros do Grupo:
 - Gonçalo Marques
 - Manuel Sousa (84740)
 
-Linguagem do Projeto: C (gcc)
-Cadeira: Introdução aos Algoritmos e Estruturas de Dados
+
+Linguagem do Projeto: C (gcc) <br/>
+
+Cadeira: Introdução aos Algoritmos e Estruturas de Dados 
+
 Para Compilar:
 ==========
 
