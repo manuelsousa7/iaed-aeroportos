@@ -18,9 +18,11 @@ int main()
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	long long int total_voos;
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
-	while (1){
+	while (1) 
+	{
 		c = getchar();
-		switch (c){
+		switch (c)
+		{
 			case 'A':
 				CriaAeroporto(aeroportos, numero_aeroportos, popular);
 				numero_aeroportos++;
@@ -30,23 +32,23 @@ int main()
 				break;
 
 			case 'F':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos);
 				if (muda_voo)
 					total_voos += 2;
 				break;
 
 			case 'G':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos);
 				if (muda_voo)
 					total_voos += 1;
 				break;
 			case 'R':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos);
 				if (muda_voo)
 					total_voos -= 1;
 				break;
 			case 'S':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos);
 				if (muda_voo)
 					total_voos -= 2;
 				break;
@@ -65,7 +67,7 @@ int main()
 
 			case 'V':
 				//LOL fiz um vetor de dimensao 1 para o poder modificar dentro da funcao...
-				VooPopular();
+				printf("Voo mais popular %s:%s:%d", popular[0].partida, popular[0].chegada, popular[0].voos);
 				break;
 
 			case 'C':
@@ -77,22 +79,26 @@ int main()
 				break;
 			case 'L':
 				scanf("%d",&int1_input);
-				if(int1_input==0){
+				if(int1_input==0)
+				{
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,1);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);
 				}
-				else if(int1_input==1){
+				else if(int1_input==1)
+				{
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,0);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);
 				}
-				else{
+				else
+				{
 					HistogramaImprime(aeroportos,numero_aeroportos);
 				}
 				break;
-		}		
-		if(c=='X'){
+		}	
+		if(c=='X')
+		{
 			printf("%lld:%d\n",total_voos,numero_aeroportos);
 			break;
 		}

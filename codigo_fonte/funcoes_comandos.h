@@ -40,7 +40,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 }
 
 //Adiciona ou remove um voo de ida ou de ida e volta
-bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover){
+bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long long int total_voos){
 
 	int index_1, index_2;
 	char str1_input[MAXID], str2_input[MAXID];
@@ -53,6 +53,8 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 
 		//se for para remover
 		if (remover){
+
+			//se o numero de voos em ambos os casos for maior que 0
 			if (aeroportos[index_1].partem > 0 && aeroportos[index_2].chegam > 0){
 				grafo[index_2][index_1] -= 1;
 				aeroportos[index_1].partem -= 1;
@@ -65,10 +67,13 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
 				if (!(aeroportos[index_2].chegam > 0))
 					printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
+				return false;
 			}
 		}
 		//se for para adicionar
 		else {
+
+			//se os aeroportos nao tiverem excedido a capacidade
 			if (aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade && aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade){
 				
 				//Se os aeroportos ainda nao estavam conectados
@@ -83,7 +88,8 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 				aeroportos[index_2].chegam += 1;
 				aeroportos[index_2].soma += 1;
 
-				if (numero_aeroportos == 0){
+				//se for o primeiro voo, este passa a ser o mais popular
+				if (total_voos == 0){
 					popular[0].voos = grafo[index_2][index_1];
 					strcpy(popular[0].partida,str1_input);
 					popular[0].partida_crono = aeroportos[index_1].crono;
@@ -91,11 +97,19 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 				}
 				else {
 					if (grafo[index_2][index_1] >= popular[0].voos){
-						if (grafo[index_2][index_1] == popular[0].voos && popular[0].partida_crono < aeroportos[index_1].crono)
+						if (grafo[index_2][index_1] == popular[0].voos){
+							if (popular[0].partida_crono > aeroportos[index_1].crono){
+								strcpy(popular[0].partida,str1_input);
+								popular[0].partida_crono = aeroportos[index_1].crono;
+								strcpy(popular[0].chegada,str2_input);
+							}
+						}
+						else {
 							popular[0].voos = grafo[index_2][index_1];
-						strcpy(popular[0].partida,str1_input);
-						popular[0].partida_crono = aeroportos[index_1].crono;
-						strcpy(popular[0].chegada,str2_input);
+							strcpy(popular[0].partida,str1_input);
+							popular[0].partida_crono = aeroportos[index_1].crono;
+							strcpy(popular[0].chegada,str2_input);
+						}
 					}
 				}
 			}
@@ -104,8 +118,8 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
 				if (!(aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade))
 					printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
+				return false;
 			}
-
 		}
 
 		if (ida_volta){
@@ -129,6 +143,7 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 						printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
 					if (!(aeroportos[index_1].chegam > 0))
 						printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
+					return false;
 				}
 			}
 			//se for para adicionar
@@ -142,18 +157,29 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 
 					//Verifica se este e o maior aeroporto
 					if (grafo[index_1][index_2] >= popular[0].voos){
-						if (grafo[index_1][index_2] == popular[0].voos && popular[0].partida_crono < aeroportos[index_2].crono)
+						if (grafo[index_1][index_2] == popular[0].voos){
+							if (popular[0].partida_crono > aeroportos[index_2].crono){
+								strcpy(popular[0].partida,str1_input);
+								popular[0].partida_crono = aeroportos[index_2].crono;
+								strcpy(popular[0].chegada,str2_input);
+							}
+						}
+
+						else{
 							popular[0].voos = grafo[index_1][index_2];
-						strcpy(popular[0].partida,str1_input);
-						popular[0].partida_crono = aeroportos[index_2].crono;
-						strcpy(popular[0].chegada,str2_input);
+							strcpy(popular[0].partida,str1_input);
+							popular[0].partida_crono = aeroportos[index_2].crono;
+							strcpy(popular[0].chegada,str2_input);
+						}
 					}
+				}
 
 				else{
 					if (!(aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade))
 						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
 					if (!(aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade))
 						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
+					return false;
 				}
 			}
 		}
@@ -200,7 +226,7 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 			indice = iterador;
 		}
 
-	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].chegam,aeroportos[indice].partem);
+	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].partem,aeroportos[indice].chegam);
 }
 
 void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
