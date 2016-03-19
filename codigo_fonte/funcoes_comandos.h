@@ -110,8 +110,8 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 							strcpy(popular[0].partida,str1_input);
 							popular[0].partida_crono = aeroportos[index_1].crono;
 							strcpy(popular[0].chegada,str2_input);
-						}
-					}
+						
+}					}
 				}
 			}
 			else{
@@ -126,7 +126,7 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 		if (ida_volta){
 			//se for para remover
 			if (remover) {
-				if (aeroportos[index_2].partem > 0 && aeroportos[index_1].chegam > 0){
+				if (aeroportos[index_1].partem > 0 && aeroportos[index_2].chegam > 0){
 					grafo[index_1][index_2] -= 1;
 					aeroportos[index_2].partem -= 1;
 					aeroportos[index_2].soma -= 1;
