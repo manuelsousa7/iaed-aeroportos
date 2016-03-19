@@ -4,7 +4,18 @@ Membros do Grupo:
 - Gonçalo Marques
 - Manuel Sousa
 
-# Código Fonte
 
-Main: /codigo_font/main.c
-Linguagem: C
+Para Compilar:
+==========
+
+```
+     make clean
+     make all
+```
+
+
+Código Fonte:
+==========
++ main.c:
+++ contem...
+
