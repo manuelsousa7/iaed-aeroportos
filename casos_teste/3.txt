@@ -1,0 +1,7 @@
+Voos entre cidades LAX:OPO:1:1
+Voos entre cidades LAX:OPO:-1:1
+Voos entre cidades LAX:OPO:-1:1
+LAX:10:0:2
+LIS:20:2:2
+OPO:30:2:0
+5:3
