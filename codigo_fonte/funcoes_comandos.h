@@ -34,7 +34,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 {
 	int i;
 	for (i = 0 ; i < numero_aeroportos ; i++)
-		printf("%s:%d:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam, aeroportos[i].soma);
+		printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
 }
 
 //Adiciona ou remove um voo de ida ou de ida e volta
@@ -114,9 +114,10 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
     int iterador, maior = 0, indice = 0;
 
     for (iterador = 0; iterador < numero_aeroportos; iterador++)
-        if (maior < (aeroportos[iterador].partem + aeroportos[iterador].chegam))
+        if (maior < (aeroportos[iterador].partem + aeroportos[iterador].chegam)){
             maior = (aeroportos[iterador].partem + aeroportos[iterador].chegam);
             indice = iterador;
+        }
 
     printf("%s\n", aeroportos[indice].id);
 }

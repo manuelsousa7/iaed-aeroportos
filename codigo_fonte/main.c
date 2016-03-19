@@ -68,6 +68,7 @@ int main()
 				break;
 
 			case 'Q':
+				//Forma eficiente de calcular aeroporto mais conectado (quantas entradas de um certo indice da matriz sao != 0)
 				break;
 
 			case 'V':
