@@ -1,11 +1,11 @@
 /*                                                         .:INSTITUTO SUPERIOR TECNICO:.
-                                            Programa Realizado Por:
-                                                     - Gonçalo Marques (84719)
-                                                     - Manuel Sousa (84740)
-                                            Tema: Redes de Aeroportos
-                                            Curso: Licenciatura de Engenharia Informática e Computadores (LEIC-T)
-                                            Cadeira: Introdução aos Algoritmos e Estruturas de Dados
-                                            Data de Entrega: 02/04/2016
+											Programa Realizado Por:
+													 - Gonçalo Marques (84719)
+													 - Manuel Sousa (84740)
+											Tema: Redes de Aeroportos
+											Curso: Licenciatura de Engenharia Informática e Computadores (LEIC-T)
+											Cadeira: Introdução aos Algoritmos e Estruturas de Dados
+											Data de Entrega: 02/04/2016
 */
 #include <stdio.h>
 #include <string.h>
@@ -22,34 +22,41 @@ int main()
 	Voo voo_popular;
 	int int1_input;
 	char c;
+	bool muda_voo;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	long long int total_voos;
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
-	while (1){
+	while (1){	
 		c = getchar();
 		switch (c){
 			case 'A':
 				CriaAeroporto(aeroportos, numero_aeroportos);
-				numero_aeroportos++;	
+				numero_aeroportos++;
 				break;
-
 			case 'I':
 				AlteraCapacidadeAeroporto(grafo, aeroportos, numero_aeroportos);
 				break;
 
 			case 'F':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA);
+				if (muda_voo)
+					total_voos += 2;
 				break;
 
 			case 'G':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA);
+				if (muda_voo)
+					total_voos += 1;
 				break;
-
 			case 'R':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE);
+				if (muda_voo)
+					total_voos -= 1;
 				break;
 			case 'S':
-				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE);
+				if (muda_voo)
+					total_voos -= 2;
 				break;
 
 			case 'N':
@@ -61,7 +68,7 @@ int main()
 				break;
 
 			case 'Q':
-				//Forma eficiente de calcular aeroporto mais conectado (quantas entradas de um certo indice da matriz sao != 0)
+				AeroportoConectado(aeroportos, numero_aeroportos);
 				break;
 
 			case 'V':
