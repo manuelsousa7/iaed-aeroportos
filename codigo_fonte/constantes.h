@@ -25,7 +25,7 @@ typedef struct{
 typedef struct{
 	int voos;
 	char partida[MAXID];
-	int partida_crono,
+	int partida_crono;
 	char chegada[MAXID];
 } Voo;
 
