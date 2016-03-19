@@ -44,6 +44,7 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 
 	int index_1, index_2;
 	char str1_input[MAXID], str2_input[MAXID];
+	bool retornar = false;
 
 	scanf("%s %s", str1_input, str2_input);
 	index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
@@ -64,10 +65,10 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 			}
 			else {
 				if (!(aeroportos[index_1].partem > 0))
-					printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
+					printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
 				if (!(aeroportos[index_2].chegam > 0))
-					printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
-				return false;
+					printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
+				retornar = true;
 			}
 		}
 		//se for para adicionar
@@ -115,10 +116,10 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 			}
 			else{
 				if (!(aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade))
-					printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
+					printf("*Impossivel adicionar voo %s %s\n", str1_input, str2_input);
 				if (!(aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade))
-					printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
-				return false;
+					printf("*Impossivel adicionar voo %s %s\n", str1_input, str2_input);
+				retornar = true;
 			}
 		}
 
@@ -143,7 +144,7 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 						printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
 					if (!(aeroportos[index_1].chegam > 0))
 						printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
-					return false;
+					retornar = true;
 				}
 			}
 			//se for para adicionar
@@ -179,11 +180,14 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
 					if (!(aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade))
 						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
-					return false;
+					retornar = true;
 				}
 			}
 		}
-		return true;
+		if (retornar)
+			return false;
+		else
+			return true;
 	}
 
 	else {
