@@ -16,9 +16,9 @@ typedef struct{
 	int capacidade;
 	bool estado;
 	int crono;
+	int soma;
 	int partem;
 	int chegam;
-	int soma;
 } Aeroporto;
 
 typedef struct{

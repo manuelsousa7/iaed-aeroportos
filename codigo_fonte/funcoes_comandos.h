@@ -7,6 +7,7 @@ void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos)
 	Aeroporto aeroporto;
 	aeroporto.capacidade=capacidade;
 	aeroporto.estado=true;
+    aeroporto.soma=0;
 	aeroporto.partem=0;
 	aeroporto.chegam=0;
 	aeroporto.crono=numero_aeroportos;
@@ -14,26 +15,17 @@ void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos)
     aeroportos[numero_aeroportos] = aeroporto;
 }
 
-//Soma os voos de partida e chegada de um aeroporto
-int SomaVooAmbos(int grafo[][MAXAEROPORTOS], int numero_aeroportos, int indice){
-    int iterador, soma = 0;
-
-    for (iterador = 0; iterador < numero_aeroportos; iterador++)
-        soma += (grafo[iterador][indice] + grafo[indice][iterador]);
-
-    return soma;
-}
-
 //Altera a capacidade do aeroporto
 void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos)
 {
-    int capacidade, index_1, soma;
+    int cap, index_1;
     char str1_input[MAXID];
-    scanf("%s %d", str1_input, &capacidade);
+    scanf("%s %d", str1_input, &cap);
     index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
-    soma = SomaVooAmbos(grafo, numero_aeroportos, index_1);
-    if(index_1!=-1 && soma >= capacidade && aeroportos[index_1].estado)
-        aeroportos[index_1].capacidade += capacidade;
+    printf("%d %d %d", aeroportos[index_1].soma, aeroportos[index_1].capacidade, cap);
+
+    if(index_1 != -1 && aeroportos[index_1].soma <= (aeroportos[index_1].capacidade + cap) && aeroportos[index_1].estado)
+        aeroportos[index_1].capacidade += cap;
     else
         printf("*Capacidade de %s inalterada\n",str1_input);
 }
@@ -42,7 +34,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 {
 	int i;
 	for (i = 0 ; i < numero_aeroportos ; i++)
-		printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
+		printf("%s:%d:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam, aeroportos[i].soma);
 }
 
 //Adiciona ou remove um voo de ida ou de ida e volta
@@ -56,16 +48,36 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
     index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
 
     if (index_1 != -1 && index_2 != -1 && aeroportos[index_1].estado && aeroportos[index_2].estado){
-    	if (remover)
+    	if (remover){
         	grafo[index_2][index_1] -= 1;
-        else
+            aeroportos[index_1].partem -= 1;
+            aeroportos[index_1].soma -= 1;
+            aeroportos[index_2].chegam -= 1;
+            aeroportos[index_2].soma -= 1;
+        }
+        else {
         	grafo[index_2][index_1] += 1;
+            aeroportos[index_1].partem += 1;
+            aeroportos[index_1].soma += 1;
+            aeroportos[index_2].chegam += 1;
+            aeroportos[index_2].soma += 1;
+        }
 
         if (ida_volta){
-            if (remover)
+            if (remover) {
 	        	grafo[index_1][index_2] -= 1;
-	        else
+                aeroportos[index_2].partem -= 1;
+                aeroportos[index_2].soma -= 1;
+                aeroportos[index_1].chegam -= 1;
+                aeroportos[index_1].soma -= 1;
+            }
+	        else {
 	        	grafo[index_1][index_2] += 1;
+                aeroportos[index_2].partem += 1;
+                aeroportos[index_2].soma += 1;
+                aeroportos[index_1].chegam += 1;
+                aeroportos[index_1].soma += 1;
+            }
         }
     }
 
