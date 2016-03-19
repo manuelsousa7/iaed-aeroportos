@@ -16,6 +16,7 @@ typedef struct{
 	int capacidade;
 	bool estado;
 	int crono;
+	int conectados;
 	int soma;
 	int partem;
 	int chegam;
@@ -28,6 +29,6 @@ typedef struct{
 
 int OrdenaAeroportosCronologicamente(const void *a, const void *b) ;
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
-void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover);
+bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover);
 int OrdenaHistograma(const void *a, const void *b);
 int PesquisaBinariaHistograma(Histograma histograma[], int n, int n_hist);
