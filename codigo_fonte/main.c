@@ -19,6 +19,7 @@
 int main()
 {
 	Aeroporto aeroportos[MAXAEROPORTOS];
+	Voo voo_popular;
 	int int1_input;
 	char c;
 	bool muda_voo;
@@ -29,13 +30,9 @@ int main()
 		c = getchar();
 		switch (c){
 			case 'A':
-
-				//E SE O UTILIZADOR INTRODUZIR UM AEROPORTO COM MAIS DE 3 LETRAS??
-
 				CriaAeroporto(aeroportos, numero_aeroportos);
 				numero_aeroportos++;
 				break;
-
 			case 'I':
 				AlteraCapacidadeAeroporto(grafo, aeroportos, numero_aeroportos);
 				break;
@@ -51,7 +48,6 @@ int main()
 				if (muda_voo)
 					total_voos += 1;
 				break;
-
 			case 'R':
 				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE);
 				if (muda_voo)
@@ -76,7 +72,7 @@ int main()
 				break;
 
 			case 'V':
-				//VooPopular(grafo, numero_aeroportos);
+				printf("%s:%s:%d\n",voo_popular.sair_de,voo_popular.chegar_a,voo_popular.voos);
 				break;
 
 			case 'C':
