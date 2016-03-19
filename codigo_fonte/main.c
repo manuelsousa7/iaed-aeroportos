@@ -18,10 +18,11 @@
 
 int main()
 {
+	Aeroporto aeroportos[MAXAEROPORTOS];
 	int int1_input;
 	char c;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
-	Aeroporto aeroportos[MAXAEROPORTOS];
+	long long int total_voos;
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
 	while (1){
 		c = getchar();
@@ -92,13 +93,15 @@ int main()
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,0);
 					ImprimeAeroportos(aeroportos,numero_aeroportos);
 				}
-				else{//histograma
+				else{
 					HistogramaImprime(aeroportos,numero_aeroportos);
 				}
 				break;
 		}		
-		if(c=='X')
+		if(c=='X'){
+			printf("%ld:%d\n",total_voos,numero_aeroportos);
 			break;
+		}
 	}
 	return 0;
 }
