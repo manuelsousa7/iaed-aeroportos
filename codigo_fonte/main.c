@@ -11,18 +11,18 @@
 int main()
 {
 	Aeroporto aeroportos[MAXAEROPORTOS];
-	Voo voo_popular;
+	Voo popular[1];
 	int int1_input;
 	char c;
 	bool muda_voo;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
 	long long int total_voos;
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
-	while (1){	
+	while (1){
 		c = getchar();
 		switch (c){
 			case 'A':
-				CriaAeroporto(aeroportos, numero_aeroportos);
+				CriaAeroporto(aeroportos, numero_aeroportos, popular);
 				numero_aeroportos++;
 				break;
 			case 'I':
@@ -64,7 +64,8 @@ int main()
 				break;
 
 			case 'V':
-				printf("%s:%s:%d\n",voo_popular.sair_de,voo_popular.chegar_a,voo_popular.voos);
+				//LOL fiz um vetor de dimensao 1 para o poder modificar dentro da funcao...
+				VooPopular();
 				break;
 
 			case 'C':
