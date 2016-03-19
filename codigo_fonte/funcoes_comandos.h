@@ -125,18 +125,19 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 	Histograma hist[MAXAEROPORTOS];
     int n_hist=0;
-    int i;
-    for (i=0;i<numero_aeroportos;i++)
-    {
-        if(PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist)==-1)
-        {
+    int index,i;
+    for (i=0;i<numero_aeroportos;i++){
+        index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
+        if(index==-1){
             hist[n_hist].soma=aeroportos[i].soma;
-            hist[n_hist].n=0;
+            hist[n_hist].n=1;
+            n_hist++;
         }
         else
-            hist[n_hist].n++;
+            hist[index].n++;
     }
+    qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
     for(i=0;i<n_hist;i++)
-        printf("%d %d", hist[i].soma,hist[i].n);
+        printf("%d:%d\n", hist[i].soma,hist[i].n);
 
 }
