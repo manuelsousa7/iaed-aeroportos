@@ -32,26 +32,26 @@ int main()
 				break;
 
 			case 'F':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos[0]);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos);
 				if (muda_voo){
 					total_voos[0] += 2;
 				}
 				break;
 
 			case 'G':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos[0]);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos);
 				if (muda_voo){
 					total_voos[0] += 1;
 				}
 				break;
 			case 'R':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos[0]);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos);
 				if (muda_voo){
 					total_voos[0] -= 1;
 				}
 				break;
 			case 'S':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos[0]);
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos);
 				if (muda_voo){
 					total_voos[0] -= 2;
 				}

@@ -40,7 +40,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 }
 
 //Adiciona ou remove um voo de ida ou de ida e volta
-bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long long int total_voos){
+bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long int total_voos[]){
 
 	int index_1, index_2;
 	char str1_input[MAXID], str2_input[MAXID];
@@ -86,7 +86,7 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 				aeroportos[index_2].soma += 1;
 
 				//se for o primeiro voo, este passa a ser o mais popular
-				if (total_voos == 0){
+				if (total_voos[0] == 0){
 					popular[0].voos = grafo[index_2][index_1];
 					strcpy(popular[0].partida,str1_input);
 					popular[0].partida_crono = aeroportos[index_1].crono;
@@ -94,10 +94,12 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 				}
 				else {
 					if (grafo[index_2][index_1] >= popular[0].voos){
-						if (grafo[index_2][index_1] == popular[0].voos && popular[0].partida_crono > aeroportos[index_1].crono){
-							strcpy(popular[0].partida,str1_input);
-							popular[0].partida_crono = aeroportos[index_1].crono;
-							strcpy(popular[0].chegada,str2_input);
+						if (grafo[index_2][index_1] == popular[0].voos){
+							if (popular[0].partida_crono > aeroportos[index_1].crono){
+								strcpy(popular[0].partida,str1_input);
+								popular[0].partida_crono = aeroportos[index_1].crono;
+								strcpy(popular[0].chegada,str2_input);
+							}
 						}
 						else {
 							popular[0].voos = grafo[index_2][index_1];
@@ -163,21 +165,48 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					aeroportos[index_1].chegam += 1;
 					aeroportos[index_1].soma += 1;
 
-					//Verifica se este e o maior aeroporto
-					if (grafo[index_1][index_2] >= popular[0].voos){
-						if (grafo[index_1][index_2] == popular[0].voos){
-							if (popular[0].partida_crono > aeroportos[index_2].crono){
+					//se for o primeiro voo, este passa a ser o mais popular
+					if (total_voos[0] == 0){
+						popular[0].voos = grafo[index_2][index_1];
+						strcpy(popular[0].partida,str1_input);
+						popular[0].partida_crono = aeroportos[index_1].crono;
+						strcpy(popular[0].chegada,str2_input);
+					}
+					else {
+
+						//verifica a rota de ida
+						if (grafo[index_2][index_1] >= popular[0].voos){
+							if (grafo[index_2][index_1] == popular[0].voos){
+								if (popular[0].partida_crono > aeroportos[index_1].crono){
+									strcpy(popular[0].partida,str1_input);
+									popular[0].partida_crono = aeroportos[index_1].crono;
+									strcpy(popular[0].chegada,str2_input);
+								}
+							}
+							else {
+								popular[0].voos = grafo[index_2][index_1];
+								strcpy(popular[0].partida,str1_input);
+								popular[0].partida_crono = aeroportos[index_1].crono;
+								strcpy(popular[0].chegada,str2_input);
+							}
+							
+						}
+						//verifica a rota de volta
+						if (grafo[index_1][index_2] >= popular[0].voos){
+							if (grafo[index_1][index_2] == popular[0].voos){
+								if (popular[0].partida_crono > aeroportos[index_2].crono){
+									strcpy(popular[0].partida,str1_input);
+									popular[0].partida_crono = aeroportos[index_2].crono;
+									strcpy(popular[0].chegada,str2_input);
+								}
+							}
+							else {
+								popular[0].voos = grafo[index_1][index_2];
 								strcpy(popular[0].partida,str1_input);
 								popular[0].partida_crono = aeroportos[index_2].crono;
 								strcpy(popular[0].chegada,str2_input);
 							}
-						}
-
-						else{
-							popular[0].voos = grafo[index_1][index_2];
-							strcpy(popular[0].partida,str1_input);
-							popular[0].partida_crono = aeroportos[index_2].crono;
-							strcpy(popular[0].chegada,str2_input);
+							
 						}
 					}
 				}
