@@ -43,7 +43,7 @@
 			"file": "codigo_fonte/main.c",
 			"settings":
 			{
-				"buffer_size": 2997,
+				"buffer_size": 2618,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "codigo_fonte/funcoes_comandos.h",
 			"settings":
 			{
-				"buffer_size": 7584,
+				"buffer_size": 8859,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +59,7 @@
 			"file": "codigo_fonte/funcoes_auxiliares.h",
 			"settings":
 			{
-				"buffer_size": 2032,
+				"buffer_size": 1762,
 				"line_ending": "Unix"
 			}
 		},
@@ -67,7 +67,7 @@
 			"file": "codigo_fonte/constantes.h",
 			"settings":
 			{
-				"buffer_size": 930,
+				"buffer_size": 840,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,10 +104,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/goncalao/iaed-aeroportos/codigo_fonte"
 	],
 	"file_history":
 	[
+		"/home/goncasmage/iaed-aeroportos/README.md",
 		"/home/goncalao/iaed-aeroportos/codigo_fonte/funcoes_comandos.h",
 		"/home/goncalao/iaed-aeroportos/codigo_fonte/constantes.h",
 		"/home/goncalao/iaed-aeroportos/codigo_fonte/funcoes_auxiliares.h",
@@ -159,7 +159,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -168,44 +168,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2997,
+						"buffer_size": 2618,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2033,
-								2033
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 153.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "codigo_fonte/funcoes_comandos.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7584,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7125,
-								7125
+								394,
+								394
 							]
 						],
 						"settings":
@@ -221,20 +192,49 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "codigo_fonte/funcoes_auxiliares.h",
+					"buffer": 1,
+					"file": "codigo_fonte/funcoes_comandos.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2032,
+						"buffer_size": 8859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2031,
-								2031
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 4131.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "codigo_fonte/funcoes_auxiliares.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1762,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -244,10 +244,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 948.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -256,15 +256,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 930,
+						"buffer_size": 840,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								697,
-								697
+								127,
+								127
 							]
 						],
 						"settings":
@@ -276,7 +276,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
