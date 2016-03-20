@@ -255,9 +255,11 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 	Histograma hist[MAXAEROPORTOS];
-    int n_hist=0;
     int index,i;
-    for (i=0;i<numero_aeroportos;i++){
+    int n_hist=1;
+    hist[0].soma=aeroportos[0].soma;
+    hist[0].n=1;
+    for (i=1;i<numero_aeroportos;i++){
         if(aeroportos[i].estado==true){
             index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
             if(index==-1){

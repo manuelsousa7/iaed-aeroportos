@@ -80,6 +80,7 @@ int main()
 			case 'O':
 				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,0);
 				break;
+
 			case 'L':
 				scanf("%d",&int1_input);
 				if(int1_input==0)
