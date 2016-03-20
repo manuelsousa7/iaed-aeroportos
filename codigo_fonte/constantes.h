@@ -1,3 +1,4 @@
+/*constantes*/
 #define ADICIONA false
 #define ENCERRA true
 #define REABRE false
@@ -7,7 +8,7 @@
 #define MAXID 4
 #define MAXAEROPORTOS 1001
 
-
+/*structs utilizados pelo programa*/
 typedef struct{
 	char id[4];
 	int capacidade;
@@ -48,4 +49,4 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos);
 void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos);
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos);
-void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], int encerra);
+void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], bool encerra);
