@@ -1,18 +1,27 @@
-# the compiler: gcc for C program, define as g++ for C++
-CC = gcc
-
-# compiler flags:
-#  -g    adds debugging information to the executable file
-#  -Wall turns on most, but not all, compiler warnings
-CFLAGS  = -Wall
-
-# the build target executable:
 TARGET = main
+LIBS = -lm
+CC = gcc
+CFLAGS = -g -Wall
 
-all: $(TARGET)
+.PHONY: default all clean
 
-$(TARGET): $(TARGET).c
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+default: $(TARGET)
+all: default
+
+OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
+HEADERS = $(wildcard *.h)
+
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+.PRECIOUS: $(TARGET) $(OBJECTS)
+
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
 
 clean:
-	$(RM) $(TARGET)
+	-rm -f *.o
+	-rm -f $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)

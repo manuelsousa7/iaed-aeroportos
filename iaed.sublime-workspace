@@ -4,36 +4,44 @@
 		"selected_items":
 		[
 			[
-				"cap",
-				"capacidade"
-			],
-			[
-				"inde",
-				"index_1"
-			],
-			[
-				"n",
-				"n_going_coming"
-			],
-			[
-				"str",
-				"str2_input"
-			],
-			[
-				"str2",
-				"str2_input"
-			],
-			[
-				"aero",
+				"ar",
 				"aeroportos"
 			],
 			[
-				"index",
-				"index_2"
+				"MA",
+				"MAXID"
 			],
 			[
-				"str_",
+				"num",
+				"numero_aeroportos"
+			],
+			[
+				"a",
+				"aeroporto"
+			],
+			[
+				"i",
+				"int"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"str",
 				"str1_input"
+			],
+			[
+				"hist",
+				"hist_p"
+			],
+			[
+				"MAX",
+				"MAXAEROPORTOS"
+			],
+			[
+				"A",
+				"Aeroporto"
 			]
 		]
 	},
@@ -43,7 +51,7 @@
 			"file": "codigo_fonte/main.c",
 			"settings":
 			{
-				"buffer_size": 2997,
+				"buffer_size": 2787,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,7 +59,7 @@
 			"file": "codigo_fonte/funcoes_comandos.h",
 			"settings":
 			{
-				"buffer_size": 7584,
+				"buffer_size": 11777,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +67,7 @@
 			"file": "codigo_fonte/funcoes_auxiliares.h",
 			"settings":
 			{
-				"buffer_size": 2032,
+				"buffer_size": 1777,
 				"line_ending": "Unix"
 			}
 		},
@@ -67,7 +75,7 @@
 			"file": "codigo_fonte/constantes.h",
 			"settings":
 			{
-				"buffer_size": 930,
+				"buffer_size": 1812,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,14 +112,28 @@
 	},
 	"expanded_folders":
 	[
-		"/home/goncalao/iaed-aeroportos/codigo_fonte"
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste"
 	],
 	"file_history":
 	[
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/funcoes_comandos.h",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/constantes.h",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/funcoes_auxiliares.h",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/main.c",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/comandos.txt",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo03.in",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/Makefile",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/run.sh",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo04.out",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/funcoes_auxiliares.h",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo04.in",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/3.txt",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo03.out",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/4.out",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/4.in",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/3.in",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/iaed.sublime-workspace",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/2.out",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/2.in",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/1.in",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/funcoes_comandos.h",
 		"/home/msousa/projetos/iaed-aeroportos/codigo_fonte/codigo_fonte.c",
 		"/home/msousa/projetos/iaed-nome/codigo_fonte/codigo_fonte.c",
 		"/home/msousa/Dropbox/Documentos/Arquivos - Privado/Secundário/Programação de Sistemas Informáticos/Trabalho Final - QuickSort.cpp",
@@ -133,12 +155,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"VooPopular",
-			"AdicionaRemoveVoo",
-			"PesquisaBinariaAeroportos",
-			"retorno",
-			"AdicionaVoo",
-			"index"
+			"OrdenaAeroportos",
+			"voo mais",
+			"%s\",",
+			"%s\"",
+			":",
+			"rotas",
+			";\n",
+			"\");\n",
+			"Aeroporto *ia = (Aeroporto *)a;\nAeroporto *ib = (Aeroporto *)b;\nreturn ia->crono > ib->crono",
+			"Aeroporto *ia = (Aeroporto *)a;\nAeroporto *ib = (Aeroporto *)b;\nreturn ia->crono > ib->crono;",
+			"iterador",
+			"short",
+			"hd",
+			"s",
+			"short",
+			"numero",
+			"capacidade)",
+			"imprime_aeroportos",
+			"id_n",
+			"->nr"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -146,9 +182,10 @@
 		"regex": false,
 		"replace_history":
 		[
-			"vetor_retorno",
-			"AdicionaRemoveVoo",
-			"index_1"
+			"i",
+			"d",
+			"ImprimeAeroportos",
+			"->id"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -159,7 +196,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -168,15 +205,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2997,
+						"buffer_size": 2787,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2033,
-								2033
+								2074,
+								2074
 							]
 						],
 						"settings":
@@ -185,10 +222,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 153.0,
+						"translation.y": 192.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -197,27 +234,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7584,
+						"buffer_size": 11777,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7125,
-								7125
+								10423,
+								10423
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4220.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -226,25 +264,23 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2032,
+						"buffer_size": 1777,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2031,
-								2031
+								632,
+								632
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 948.0,
+						"translation.y": 225.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -256,27 +292,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 930,
+						"buffer_size": 1812,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								697,
-								697
+								102,
+								102
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
-						"translation.x": 0.0,
+						"translation.x": -0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -284,7 +319,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -321,7 +356,7 @@
 	"project": "iaed.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -359,7 +394,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 185.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

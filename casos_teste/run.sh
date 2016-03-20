@@ -1,14 +1,14 @@
 #!/bin/bash  
 
-gcc -o bla $1 -Wall
+gcc ../codigo_fonte/main.c -o ../codigo_fonte/main -Wall
 shift
 for arg in "$@"
 do
   echo "Running $arg"
   echo ""
-  ./bla < "${arg%.*}".in > "${arg%.*}".out.bla
-  diff "${arg%.*}".out "${arg%.*}".out.bla
+  ../codigo_fonte/main < "${arg%.*}".in > "${arg%.*}".out.main
+  diff "${arg%.*}".out "${arg%.*}".out.main
 done
 
-rm *.bla
-rm bla
+rm *../codigo_fonte/main
+rm ../codigo_fonte/main
