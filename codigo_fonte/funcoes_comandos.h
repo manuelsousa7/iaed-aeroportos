@@ -44,39 +44,35 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 
 	int index_1, index_2;
 	char str1_input[MAXID], str2_input[MAXID];
-	bool retornar = false;
 
 	scanf("%s %s", str1_input, str2_input);
 	index_1 = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
 	index_2 = PesquisaBinariaAeroportos(aeroportos, str2_input, numero_aeroportos);
-
 	if (index_1 != -1 && index_2 != -1 && aeroportos[index_1].estado && aeroportos[index_2].estado){
-
 		//se for para remover
 		if (remover){
-
-			//se o numero de voos em ambos os casos for maior que 0
-			if (aeroportos[index_1].partem > 0 && aeroportos[index_2].chegam > 0){
+			//se o numero de voos for maior que 0
+			if (grafo[index_2][index_1] > 0 && !(ida_volta)){
 				grafo[index_2][index_1] -= 1;
 				aeroportos[index_1].partem -= 1;
 				aeroportos[index_1].soma -= 1;
 				aeroportos[index_2].chegam -= 1;
 				aeroportos[index_2].soma -= 1;
+				//Se os aeroportos deixarem de estar conectados
+				if (grafo[index_2][index_1] == 0 && grafo[index_1][index_2] == 0){
+					aeroportos[index_1].conectados -= 1;
+					aeroportos[index_2].conectados -= 1;
+				}
 			}
-			else {
-				if (!(aeroportos[index_1].partem > 0))
-					printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
-				if (!(aeroportos[index_2].chegam > 0))
-					printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
-				retornar = true;
+			else if (!ida_volta){
+				printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
+				return false;
 			}
 		}
 		//se for para adicionar
 		else {
-
 			//se os aeroportos nao tiverem excedido a capacidade
-			if (aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade && aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade){
-				
+			if (aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade && aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade && !(ida_volta)){
 				//Se os aeroportos ainda nao estavam conectados
 				if (grafo[index_2][index_1] == 0 && grafo[index_1][index_2] == 0){
 					aeroportos[index_1].conectados += 1;
@@ -98,35 +94,39 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 				}
 				else {
 					if (grafo[index_2][index_1] >= popular[0].voos){
-						if (grafo[index_2][index_1] == popular[0].voos){
-							if (popular[0].partida_crono > aeroportos[index_1].crono){
-								strcpy(popular[0].partida,str1_input);
-								popular[0].partida_crono = aeroportos[index_1].crono;
-								strcpy(popular[0].chegada,str2_input);
-							}
+						if (grafo[index_2][index_1] == popular[0].voos && popular[0].partida_crono > aeroportos[index_1].crono){
+							strcpy(popular[0].partida,str1_input);
+							popular[0].partida_crono = aeroportos[index_1].crono;
+							strcpy(popular[0].chegada,str2_input);
 						}
 						else {
 							popular[0].voos = grafo[index_2][index_1];
 							strcpy(popular[0].partida,str1_input);
 							popular[0].partida_crono = aeroportos[index_1].crono;
 							strcpy(popular[0].chegada,str2_input);
+						}
 						
-}					}
+					}
 				}
 			}
-			else{
+			else if (!ida_volta){
 				if (!(aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade))
 					printf("*Impossivel adicionar voo %s %s\n", str1_input, str2_input);
 				if (!(aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade))
 					printf("*Impossivel adicionar voo %s %s\n", str1_input, str2_input);
-				retornar = true;
+				return false;
 			}
 		}
 
 		if (ida_volta){
 			//se for para remover
 			if (remover) {
-				if (aeroportos[index_1].partem > 0 && aeroportos[index_2].chegam > 0){
+				if (grafo[index_1][index_2] > 0 && grafo[index_2][index_1] > 0){
+					grafo[index_2][index_1] -= 1;
+					aeroportos[index_1].partem -= 1;
+					aeroportos[index_1].soma -= 1;
+					aeroportos[index_2].chegam -= 1;
+					aeroportos[index_2].soma -= 1;
 					grafo[index_1][index_2] -= 1;
 					aeroportos[index_2].partem -= 1;
 					aeroportos[index_2].soma -= 1;
@@ -140,16 +140,23 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					}
 				}
 				else {
-					if (!(aeroportos[index_2].partem > 0))
-						printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
-					if (!(aeroportos[index_1].chegam > 0))
-						printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
-					retornar = true;
+					printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
+					return false;
 				}
 			}
 			//se for para adicionar
 			else {
 				if (aeroportos[index_2].soma + 1 <= aeroportos[index_2].capacidade && aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade){
+					//Se os aeroportos ainda nao estavam conectados
+					if (grafo[index_2][index_1] == 0 && grafo[index_1][index_2] == 0){
+						aeroportos[index_1].conectados += 1;
+						aeroportos[index_2].conectados += 1;
+					}
+					grafo[index_2][index_1] += 1;
+					aeroportos[index_1].partem += 1;
+					aeroportos[index_1].soma += 1;
+					aeroportos[index_2].chegam += 1;
+					aeroportos[index_2].soma += 1;
 					grafo[index_1][index_2] += 1;
 					aeroportos[index_2].partem += 1;
 					aeroportos[index_2].soma += 1;
@@ -180,32 +187,27 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
 					if (!(aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade))
 						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
-					retornar = true;
+					return false;
 				}
 			}
 		}
-		if (retornar)
-			return false;
-		else
-			return true;
+		return true;
 	}
 
 	else {
 
-		if(index_1 == -1){
-			if (remover)
+		if (remover){
+			if (ida_volta)
 				printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
 			else
-				printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
+				printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
 		}
-
-		if(index_2 == -1){
-			if (remover)
-				printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
+		else{
+			if (ida_volta)
+				printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
 			else
-				printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
+				printf("*Impossivel adicionar voo %s %s\n", str1_input, str2_input);
 		}
-
 		return false;
 	}
 }
@@ -272,14 +274,40 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
         printf("%d:%d\n", hist[i].soma,hist[i].n);
 }
 
-void EncerraReabreAeroporto(Aeroporto aeroportos[],int numero_aeroportos,int encerra)
+void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], int encerra)
 {
     char str1_input[MAXID];
     int index;
     scanf("%s",str1_input);
     index=PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
-    if(encerra==1 && index!=-1)
+    if(encerra==1 && index!=-1){
         aeroportos[index].estado=false;
+        aeroportos[index].partem=0;
+        aeroportos[index].chegam=0;
+        aeroportos[index].soma=0;
+        aeroportos[index].conectados = 0;
+    	for (int i = 0; i < numero_aeroportos; i++)
+    	{
+    		if (grafo[i][index] != 0)
+    		{
+    			if (grafo[index][i] == 0)
+    				aeroportos[i].conectados -= 1;
+    			total_voos[0] -= grafo[i][index];
+    			aeroportos[i].chegam -= grafo[i][index];
+    			aeroportos[i].soma -= grafo[i][index];
+    			grafo[i][index] = 0;
+    		}
+    		if (grafo[index][i] != 0){
+    			if (grafo[i][index] == 0)
+    				aeroportos[i].conectados -= 1;
+    			total_voos[0] -= grafo[index][i];
+    			aeroportos[i].partem -= grafo[index][i];
+    			aeroportos[i].soma -= grafo[index][i];
+    			grafo[index][i] = 0;
+    		}
+    	}
+    }
+
     else if(encerra==0 && index!=-1)
         aeroportos[index].estado=true;
     else

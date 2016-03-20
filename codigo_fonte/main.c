@@ -16,7 +16,7 @@ int main()
 	char c;
 	bool muda_voo;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
-	long long int total_voos;
+	long int total_voos[0];
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
 	while (1) 
 	{
@@ -32,25 +32,29 @@ int main()
 				break;
 
 			case 'F':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos);
-				if (muda_voo)
-					total_voos += 2;
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos[0]);
+				if (muda_voo){
+					total_voos[0] += 2;
+				}
 				break;
 
 			case 'G':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos);
-				if (muda_voo)
-					total_voos += 1;
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos[0]);
+				if (muda_voo){
+					total_voos[0] += 1;
+				}
 				break;
 			case 'R':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos);
-				if (muda_voo)
-					total_voos -= 1;
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos[0]);
+				if (muda_voo){
+					total_voos[0] -= 1;
+				}
 				break;
 			case 'S':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos);
-				if (muda_voo)
-					total_voos -= 2;
+				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos[0]);
+				if (muda_voo){
+					total_voos[0] -= 2;
+				}
 				break;
 
 			case 'N':
@@ -70,11 +74,11 @@ int main()
 				break;
 
 			case 'C':
-				EncerraReabreAeroporto(aeroportos,numero_aeroportos,1);
+				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,1);
 				break;
 
 			case 'O':
-				EncerraReabreAeroporto(aeroportos,numero_aeroportos,0);
+				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,0);
 				break;
 			case 'L':
 				scanf("%d",&int1_input);
@@ -98,7 +102,7 @@ int main()
 		}	
 		if(c=='X')
 		{
-			printf("%lld:%d\n",total_voos,numero_aeroportos);
+			printf("%ld:%d\n",total_voos[0],numero_aeroportos);
 			break;
 		}
 	}
