@@ -398,10 +398,10 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 * EncerraReabreAeroporto()
 *
 * Arguments:	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
-*				aeroportos:   		estrutura dos aeroportos (todos)
+* 				aeroportos:   		estrutura dos aeroportos (abertos e fechados)
 *              	numero_aeroportos:  numero de aeroportos atuais
 *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
-*				encerra:			booleano que indica se encerra ou se reabre
+*				encerra:			booleano que indica se encerra ou se reabre aeroporto
 *
 * Returns: void
 * Side-Effects: none

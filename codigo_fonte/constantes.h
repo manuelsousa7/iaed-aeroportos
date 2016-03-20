@@ -37,8 +37,8 @@ int OrdenaAeroportosNome(const void *a, const void *b);
 int OrdenaAeroportosCronologicamente(const void *a, const void *b);
 int OrdenaHistograma(const void *a, const void *b);
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
-int PesquisaBinariaHistograma(Histograma hist[], int soma, int n_hist);
-void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, int crono);
+int PesquisaBinariaHistograma(Histograma hist[], int a_procurar, int n_hist);
+void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, bool crono);
 
 /*funcoes_comandos.h*/
 void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos, Voo popular[]);
