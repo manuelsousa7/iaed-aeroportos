@@ -300,6 +300,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
                 hist[index].n++;
         }
     }
+    qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
     for(i=0;i<n_hist;i++)
         printf("%d:%d\n", hist[i].soma,hist[i].n);
 }
