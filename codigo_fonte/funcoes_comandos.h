@@ -321,7 +321,7 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 			maior = (aeroportos[iterador].soma);
 			indice = iterador;
 		}
-		else if (maior == (aeroportos[iterador].soma && aeroportos[iterador].crono < aeroportos[indice].crono){
+		else if (maior == (aeroportos[iterador].soma && aeroportos[iterador].crono < aeroportos[indice].crono)){
 			maior = (aeroportos[iterador].soma);
 			indice = iterador;
 		}
@@ -356,6 +356,16 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 	printf("Aeroporto com mais ligações %s:%d\n", aeroportos[indice].id,maior);
 }
 
+/******************************************************************************************
+* HistogramaImprime()
+*
+* Arguments:	aeroportos:   		matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
+*              	numero_aeroportos:  numero de aeroportos atuais
+*
+* Returns: void
+* Side-Effects: none
+* Description:  reabre ou encerra o aeroporto e apaga os voos no segundo caso
+*****************************************************************************************/
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 	Histograma hist[MAXAEROPORTOS];
     int index,i;
@@ -380,26 +390,19 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 }
 
 /******************************************************************************************
- * EncerraReabreAeroporto()
- *
- * Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
- *				aeroportos:   		estrutura dos aeroportos (todos)
- *              numero_aeroportos:  número de aeroportos atuais
- *				total_voos:			vetor de dimensao 1 que indica o número total de voos
- *
- *
- *
- *
- *				encerra:			lol nao devia ser uma bool o manecas???
- *
- *
- *
- *
- * Returns: void
- * Side-Effects: none
- * Description:  reabre ou encerra o aeroporto e apaga os voos no segundo caso
- *****************************************************************************************/
-void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], int encerra)
+* EncerraReabreAeroporto()
+*
+* Arguments:	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
+*				aeroportos:   		estrutura dos aeroportos (todos)
+*              	numero_aeroportos:  numero de aeroportos atuais
+*				total_voos:			vetor de dimensao 1 que indica o numero total de voos
+*				encerra:			booleano que indica se encerra ou se reabre
+*
+* Returns: void
+* Side-Effects: none
+* Description:  reabre ou encerra o aeroporto e apaga os voos no segundo caso
+*****************************************************************************************/
+void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], bool encerra)
 {
     char str1_input[MAXID];
     int index;
@@ -430,7 +433,6 @@ void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], 
     		}
     	}
     }
-
     else if(encerra==0 && index!=-1)
         aeroportos[index].estado=true;
     else
