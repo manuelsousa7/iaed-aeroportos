@@ -1,4 +1,21 @@
-// Grupo 11 (TG011) - Gonçalo Marques (84719) & Manuel Sousa (84740)
+/******************************************************************************
+ * File Name:   main.c
+ * Author:      Gonçalo Marques (84719) / Manuel Sousa (84740)
+ * Revision:
+ * NAME:        Rede de Aeroportos - IST/IAED - 2016 2º Sem
+ * SYNOPSIS:    #include <stdio.h>
+				#include <string.h>
+				#include <stdbool.h>
+				#include <stdlib.h>
+				#include <math.h>
+				#include "constantes.h"
+				#include "funcoes_comandos.h"
+				#include "funcoes_auxiliares.h"
+ * DESCRIPTION: Rede de Aeroportos - função main.
+ * DIAGNOSTICS: tested
+ * USAGE:       make all
+				make run
+ *****************************************************************************/
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -8,6 +25,15 @@
 #include "funcoes_comandos.h"
 #include "funcoes_auxiliares.h"
 
+
+/******************************************************************************
+* main()
+*
+* Arguments: nenhum
+* Returns: 0
+* Side-Effects: none
+* Description: 	menu de comandos com chamada dos vários modulos (Apenas)		   
+*****************************************************************************/
 int main()
 {
 	Aeroporto aeroportos[MAXAEROPORTOS];

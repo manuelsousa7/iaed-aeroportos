@@ -1,4 +1,13 @@
-//Cria um novo aeroporto
+/******************************************************************************
+ * CriaAeroporto()
+ *
+ * Arguments:   aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ *              popular:       		ponteiro para ficheiro solução
+ * Returns: void
+ * Side-Effects: none
+ * Description:  cria novo aeroporto e inicializa variaveis a 0
+ *****************************************************************************/
 void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos, Voo popular[])
 {
 	int capacidade;
