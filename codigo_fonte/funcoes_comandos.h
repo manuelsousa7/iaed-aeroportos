@@ -4,6 +4,7 @@
  * Arguments:   aeroportos:   		estrutura dos aeroportos (todos)
  *              numero_aeroportos:  número de aeroportos atuais
  *              popular:       		ponteiro para ficheiro solução
+ *
  * Returns: void
  * Side-Effects: none
  * Description:  cria novo aeroporto e inicializa variaveis a 0
@@ -31,6 +32,7 @@ void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos, Voo popular[])
  * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
  *				aeroportos:   		estrutura dos aeroportos (todos)
  *              numero_aeroportos:  número de aeroportos atuais
+ *
  * Returns: void
  * Side-Effects: none
  * Description:  altera a capacidade do aeroporto se as condições necessárias se confirmarem
@@ -53,6 +55,7 @@ void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[
  *
  * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
  *              numero_aeroportos:  número de aeroportos atuais
+ *
  * Returns: void
  * Side-Effects: none
  * Description:  imprime todos os aeroportos adicionados
@@ -76,6 +79,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
  *				remover:			boolean a true se a operacao for de remocao
  *				popular:			vetor de dimensao 1 que contém informações sobre o aeroporto mais popular
  *				total_voos:			vetor de dimensao 1 que indica o número total de voos
+ *
  * Returns: bool (usada para adicionar ou remover voos)
  * Side-Effects: none
  * Description:  adiciona ou remove voos de ida e volta ou so de ida se as condições necessárias se confirmarem
@@ -287,6 +291,7 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
  * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
  *				aeroportos:   		estrutura dos aeroportos (todos)
  *              numero_aeroportos:  número de aeroportos atuais
+ *
  * Returns: void
  * Side-Effects: none
  * Description:  imprime o numero de voos entre dois aeroportos indicados pelo utilizador
@@ -307,6 +312,7 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
  *
  * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
  *              numero_aeroportos:  número de aeroportos atuais
+ *
  * Returns: void
  * Side-Effects: none
  * Description:  imprime o aeroporto com mais voos a sair e a entrar
@@ -334,6 +340,7 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
  *
  * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
  *              numero_aeroportos:  número de aeroportos atuais
+ *
  * Returns: void
  * Side-Effects: none
  * Description:  imprime o aeroporto com mais conexões com outros aeroportos
