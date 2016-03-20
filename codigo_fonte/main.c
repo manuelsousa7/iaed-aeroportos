@@ -55,6 +55,7 @@ int main()
 				break;
 
 			case 'F':
+				//mudar a funçao AdicionaRemoveVoo() para adicionar implicitamente
 				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos);
 				if (muda_voo){
 					total_voos[0] += 2;

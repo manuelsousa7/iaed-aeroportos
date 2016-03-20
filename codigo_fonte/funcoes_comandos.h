@@ -25,7 +25,16 @@ void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos, Voo popular[])
 	aeroportos[numero_aeroportos] = aeroporto;
 }
 
-//Altera a capacidade do aeroporto
+/************************************************************************************************
+ * AlteraCapacidadeAeroporto()
+ *
+ * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+ *				aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ * Returns: void
+ * Side-Effects: none
+ * Description:  altera a capacidade do aeroporto se as condicoes necessarias se confirmarem
+ ***********************************************************************************************/
 void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos)
 {
 	int cap, index_1;
@@ -39,6 +48,15 @@ void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[
 		printf("*Capacidade de %s inalterada\n",str1_input);
 }
 
+/**********************************************************************
+ * ImprimeAeroportos()
+ *
+ * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ * Returns: void
+ * Side-Effects: none
+ * Description:  imprime todos os aeroportos adicionados
+ **********************************************************************/
 void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 {
 	int i;
@@ -48,7 +66,20 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
     }
 }
 
-//Adiciona ou remove um voo de ida ou de ida e volta
+/*****************************************************************************************************************
+ * AdicionaRemoveVoo()
+ *
+ * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+ *				aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ *				ida_volta:			boolean a true se a operacao e de ida e volta
+ *				remover:			boolean a true se a operacao for de remocao
+ *				popular:			vetor de dimensao 1 que contem informacoes do aeroporto mais popular
+ *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
+ * Returns: bool (usada para adicionar ou remover voos)
+ * Side-Effects: none
+ * Description:  adiciona ou remove voos de ida e volta ou so de ida se as condicoes necessarias se confirmarem
+ *****************************************************************************************************************/
 bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long int total_voos[]){
 
 	int index_1, index_2;
@@ -250,6 +281,16 @@ bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 	}
 }
 
+/******************************************************************************************
+ * RetornaVoo()
+ *
+ * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+ *				aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ * Returns: void
+ * Side-Effects: none
+ * Description:  imprime o numero de voos entre dois aeroportos indicados pelo utilizador
+ *****************************************************************************************/
 void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos){
 	int index_1, index_2;
 	char str1_input[MAXID], str2_input[MAXID];
@@ -261,11 +302,26 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
 	printf("Voos entre cidades %s:%s:%d:%d\n", str1_input, str2_input, grafo[index_2][index_1], grafo[index_1][index_2]);
 }
 
+/******************************************************************************************
+ * AeroportoPopular()
+ *
+ * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ * Returns: void
+ * Side-Effects: none
+ * Description:  imprime o numero de voos entre dois aeroportos indicados pelo utilizador
+ *****************************************************************************************/
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
-	int iterador, maior = 0, indice = 0;
+	int maior = 0, indice = 0;
 
-	for (iterador = 0; iterador < numero_aeroportos; iterador++)
+	maior = (aeroportos[0].soma);
+
+	for (int iterador = 1; iterador < numero_aeroportos; iterador++)
 		if (maior < (aeroportos[iterador].soma)){
+			maior = (aeroportos[iterador].soma);
+			indice = iterador;
+		}
+		else if (maior == (aeroportos[iterador].soma && aeroportos[iterador].crono < aeroportos[indice].crono){
 			maior = (aeroportos[iterador].soma);
 			indice = iterador;
 		}
@@ -273,6 +329,15 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].partem,aeroportos[indice].chegam);
 }
 
+/****************************************************************************
+ * AeroportoConectado()
+ *
+ * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ * Returns: void
+ * Side-Effects: none
+ * Description:  imprime o aeroporto com mais conexoes com outros aeroportos
+ ****************************************************************************/
 void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 	int iterador, maior = 0, indice = 0;
 
@@ -314,6 +379,26 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
         printf("%d:%d\n", hist[i].soma,hist[i].n);
 }
 
+/******************************************************************************************
+ * EncerraReabreAeroporto()
+ *
+ * Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
+ *				aeroportos:   		estrutura dos aeroportos (todos)
+ *              numero_aeroportos:  numero de aeroportos atuais
+ *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
+ *
+ *
+ *
+ *
+ *				encerra:			lol nao devia ser uma bool o manecas???
+ *
+ *
+ *
+ *
+ * Returns: void
+ * Side-Effects: none
+ * Description:  reabre ou encerra o aeroporto e apaga os voos no segundo caso
+ *****************************************************************************************/
 void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], int encerra)
 {
     char str1_input[MAXID];
