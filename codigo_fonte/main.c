@@ -14,7 +14,7 @@
  * DESCRIPTION: Rede de Aeroportos - função main.
  * DIAGNOSTICS: tested
  * USAGE:       make all
- 				make run
+				make run
  *****************************************************************************/
 #include <stdio.h>
 #include <string.h>
