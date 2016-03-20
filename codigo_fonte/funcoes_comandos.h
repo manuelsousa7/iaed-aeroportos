@@ -253,9 +253,11 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 	Histograma hist[MAXAEROPORTOS];
-    int n_hist=0;
     int index,i;
-    for (i=0;i<numero_aeroportos;i++){
+    int n_hist=1;
+    hist[0].soma=aeroportos[0].soma;
+    hist[0].n=1;
+    for (i=1;i<numero_aeroportos;i++){
         if(aeroportos[i].estado==true){
             index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
             if(index==-1){
@@ -272,15 +274,15 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
         printf("%d:%d\n", hist[i].soma,hist[i].n);
 }
 
-void EncerraReabreAeroporto(Aeroporto aeroportos[],int numero_aeroportos,int encerra)
+void EncerraReabreAeroporto(Aeroporto aeroportos[],int numero_aeroportos,int N)
 {
     char str1_input[MAXID];
     int index;
     scanf("%s",str1_input);
     index=PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
-    if(encerra==1 && index!=-1)
+    if(N==1 && index!=-1)
         aeroportos[index].estado=false;
-    else if(encerra==0 && index!=-1)
+    else if(N==0 && index!=-1)
         aeroportos[index].estado=true;
     else
         printf("*Aeroporto %s inexistente\n",str1_input);

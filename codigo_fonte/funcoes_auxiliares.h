@@ -16,7 +16,7 @@ int OrdenaHistograma(const void *a, const void *b)
 { 
 	Histograma *ia = (Histograma *)a;
 	Histograma *ib = (Histograma *)b;
-	return ia->soma > ib->soma;
+	return ia->soma - ib->soma;
 }
 
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos){ 
@@ -31,12 +31,13 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 		return index;
 }
 
-int PesquisaBinariaHistograma(Histograma hist[], int n, int n_hist){ 
+int PesquisaBinariaHistograma(Histograma hist[], int soma, int n_hist){ 
 	qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
 	Histograma key, *res;
-	key.soma=n;
-	res = bsearch(&key, hist, n_hist, sizeof(Histograma), OrdenaHistograma);
-	size_t index = res - hist;
+    //printf("index:%d\n",soma);
+    key.soma=soma;
+    res = bsearch(&key, hist, n_hist, sizeof(Histograma), OrdenaHistograma);
+    size_t index = res - hist;
 	if (res == NULL)
 		return -1;
 	else

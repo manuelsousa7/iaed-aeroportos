@@ -70,11 +70,11 @@ int main()
 				break;
 
 			case 'C':
-				EncerraReabreAeroporto(aeroportos,numero_aeroportos,1);
+				EncerraReabreAeroporto(aeroportos,numero_aeroportos,ENCERRA);
 				break;
 
 			case 'O':
-				EncerraReabreAeroporto(aeroportos,numero_aeroportos,0);
+				EncerraReabreAeroporto(aeroportos,numero_aeroportos,REABRE);
 				break;
 			case 'L':
 				scanf("%d",&int1_input);

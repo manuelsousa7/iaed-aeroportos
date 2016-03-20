@@ -1,4 +1,6 @@
 #define ADICIONA false
+#define ENCERRA true
+#define REABRE false
 #define REMOVE true
 #define IDA false
 #define IDAEVOLTA true
@@ -28,7 +30,7 @@ typedef struct{
 	int partida_crono;
 	char chegada[MAXID];
 } Voo;
-
+int OrdenaHistograma(const void *a, const void *b) ;
 int OrdenaAeroportosCronologicamente(const void *a, const void *b) ;
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
 bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long long int total_voos);
