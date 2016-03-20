@@ -30,8 +30,22 @@ typedef struct{
 	int partida_crono;
 	char chegada[MAXID];
 } Voo;
-int OrdenaHistograma(const void *a, const void *b) ;
-int OrdenaAeroportosCronologicamente(const void *a, const void *b) ;
-int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
+
+/*funcoes_auxiliares.h*/
+int OrdenaAeroportosNome(const void *a, const void *b);
+int OrdenaAeroportosCronologicamente(const void *a, const void *b);
 int OrdenaHistograma(const void *a, const void *b);
-int PesquisaBinariaHistograma(Histograma histograma[], int n, int n_hist);
+int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
+int PesquisaBinariaHistograma(Histograma hist[], int soma, int n_hist);
+void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, int crono);
+
+/*funcoes_comandos.h*/
+void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos, Voo popular[]);
+void AlteraCapacidadeAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos);
+void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos);
+bool AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long int total_voos[]);
+void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos);
+void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos);
+void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos);
+void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos);
+void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], int encerra);
