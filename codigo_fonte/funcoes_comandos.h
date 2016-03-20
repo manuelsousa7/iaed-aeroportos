@@ -317,10 +317,8 @@ void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], 
         aeroportos[index].chegam=0;
         aeroportos[index].soma=0;
         aeroportos[index].conectados = 0;
-    	for (int i = 0; i < numero_aeroportos; i++)
-    	{
-    		if (grafo[i][index] != 0)
-    		{
+    	for (int i = 0; i < numero_aeroportos; i++){
+    		if (grafo[i][index] != 0){
     			if (grafo[index][i] == 0)
     				aeroportos[i].conectados -= 1;
     			total_voos[0] -= grafo[i][index];

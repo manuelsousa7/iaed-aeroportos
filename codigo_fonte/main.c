@@ -12,17 +12,14 @@ int main()
 {
 	Aeroporto aeroportos[MAXAEROPORTOS];
 	Voo popular[1];
-	int int1_input;
 	char c;
 	bool muda_voo;
-	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS];
+	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS],int1_input;
 	long int total_voos[0];
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
-	while (1) 
-	{
+	while (1) {
 		c = getchar();
-		switch (c)
-		{
+		switch (c){
 			case 'A':
 				CriaAeroporto(aeroportos, numero_aeroportos, popular);
 				numero_aeroportos++;
@@ -80,30 +77,25 @@ int main()
 			case 'O':
 				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,0);
 				break;
-
 			case 'L':
 				scanf("%d",&int1_input);
-				if(int1_input==0)
-				{
+				if(int1_input == 0){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,1);
-					ImprimeAeroportos(aeroportos,numero_aeroportos);
+					ImprimeAeroportos(aeroportos, numero_aeroportos);
 				}
-				else if(int1_input==1)
-				{
+				else if(int1_input==1){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,0);
-					ImprimeAeroportos(aeroportos,numero_aeroportos);
+					ImprimeAeroportos(aeroportos, numero_aeroportos);
 				}
-				else
-				{
-					HistogramaImprime(aeroportos,numero_aeroportos);
+				else{
+					HistogramaImprime(aeroportos, numero_aeroportos);
 				}
 				break;
 		}	
-		if(c=='X')
-		{
-			printf("%ld:%d\n",total_voos[0],numero_aeroportos);
+		if(c == 'X'){
+			printf("%ld:%d\n", total_voos[0], numero_aeroportos);
 			break;
 		}
 	}

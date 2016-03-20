@@ -34,7 +34,6 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 int PesquisaBinariaHistograma(Histograma hist[], int soma, int n_hist){ 
 	qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
 	Histograma key, *res;
-    //printf("index:%d\n",soma);
     key.soma=soma;
     res = bsearch(&key, hist, n_hist, sizeof(Histograma), OrdenaHistograma);
     size_t index = res - hist;
