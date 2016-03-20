@@ -12,11 +12,19 @@ Para Compilar:
 ==========
 
 ```
+    cd /codigo_fonte/
     make clean
     make all
+    make run
 ```
 
 Código Fonte:
 ==========
 + main.c:
+++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
++ constantes.h:
+++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
++ funcoes_comandoss.h:
+++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
++ funcoes_auxiliares.c:
 ++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
