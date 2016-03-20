@@ -12,6 +12,7 @@ Para Compilar:
 ==========
 
 ```
+    cd /codigo_fonte/
     make clean
     make all
     make run
