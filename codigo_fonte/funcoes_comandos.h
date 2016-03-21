@@ -80,7 +80,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
  *				popular:			vetor de dimensao 1 que contém informações sobre o aeroporto mais popular
  *				total_voos:			vetor de dimensao 1 que indica o número total de voos
  *
- * Returns: bool (usada para adicionar ou remover voos)
+ * Returns: void
  * Side-Effects: none
  * Description:  adiciona ou remove voos de ida e volta ou so de ida se as condições necessárias se confirmarem
  *****************************************************************************************************************/
@@ -192,6 +192,20 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 	}
 }
 
+/******************************************************************************************
+ * AdicionaRemove()
+ *
+ * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+ *				aeroportos:   		estrutura dos aeroportos (todos)
+ *				remover:			boolean a true se a operacao for de remocao
+ *				total_voos:			vetor de dimensao 1 que indica o número total de voos
+ *				index_1:			indice do aeroporto de partida
+ *				index_2:			indice do aeroporto de chegada
+ *
+ * Returns: void
+ * Side-Effects: none
+ * Description:  adiciona ou remove um voo de uma direção
+ ******************************************************************************************/
 void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool remover, long int total_voos[], int index_1, int index_2)
 {
 	int num;
@@ -209,6 +223,23 @@ void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool rem
 	total_voos[0] += num;
 }
 
+/**************************************************************************************************************
+ * VerificaPopular()
+ *
+ * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+ *				aeroportos:   		estrutura dos aeroportos (todos)
+ *				popular:			vetor de dimensao 1 que contém informações sobre o aeroporto mais popular
+ *				ida_volta:			boolean a true se a operacao for de ida e volta
+ *				total_voos:			vetor de dimensao 1 que indica o número total de voos
+ *				index_1:			indice do aeroporto de partida
+ *				index_2:			indice do aeroporto de chegada
+ *				str1_input:			nome do aeroporto de partida
+ *				str2_input:			nome do aeroporto de chegada
+ *
+ * Returns: void
+ * Side-Effects: none
+ * Description:  verifica se os voos entre os dois aeroportos passam a ser populares
+ **************************************************************************************************************/
 void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo popular[], bool ida_volta, long int total_voos[], int index_1, int index_2, char str1_input[], char str2_input[])
 {
 	if (total_voos[0] == 0){
