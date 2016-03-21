@@ -2,7 +2,7 @@
  * File Name:   main.c
  * Author:      Gonçalo Marques (84719) / Manuel Sousa (84740)
  * Revision:
- * NAME:        Rede de Aeroportos - IST/IAED - 2016 2º Sem
+ * NAME:        Rede de Aeroportos - IST/IAED - 2016 2º Semestre
  * SYNOPSIS:    #include <stdio.h>
 				#include <string.h>
 				#include <stdbool.h>

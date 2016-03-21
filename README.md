@@ -21,10 +21,10 @@ Para Compilar:
 Código Fonte:
 ==========
 + main.c:
-++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
+-> Contem o menu de comandos, chamada dos modulos correspondestes a cada comando
 + constantes.h:
-++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
-+ funcoes_comandoss.h:
-++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
-+ funcoes_auxiliares.c:
-++ contem.asjdh akjdhsa hjdkashd jkshad jsakdhjsa
+-> Contem todas definições de constantes, estruturas e headers de funções
++ funcoes_comandos.h:
+-> Contem apenas as funções principais que são chamadas pelo main.c correspondentes aos comandos
++ funcoes_auxiliares.h:
+-> Contem funções auxiliares de suporte aos comandos. Algoritmos de Ordenação (QuickSort e InsertionSort)  e Pesquisa Binária.

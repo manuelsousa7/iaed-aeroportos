@@ -50,3 +50,4 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos);
 void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos);
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos);
 void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], bool encerra);
+void InsertionSortHistrograma(Histograma hist[], int n_hist);
