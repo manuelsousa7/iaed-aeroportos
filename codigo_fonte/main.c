@@ -39,7 +39,6 @@ int main()
 	Aeroporto aeroportos[MAXAEROPORTOS];
 	Voo popular[1];
 	char c;
-	bool muda_voo;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS],int1_input;
 	long int total_voos[0];
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
@@ -55,30 +54,19 @@ int main()
 				break;
 
 			case 'F':
-				//mudar a funçao AdicionaRemoveVoo() para adicionar implicitamente
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos);
-				if (muda_voo){
-					total_voos[0] += 2;
-				}
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, ADICIONA, popular, total_voos);
 				break;
 
 			case 'G':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos);
-				if (muda_voo){
-					total_voos[0] += 1;
-				}
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, ADICIONA, popular, total_voos);
 				break;
+
 			case 'R':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos);
-				if (muda_voo){
-					total_voos[0] -= 1;
-				}
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDA, REMOVE, popular, total_voos);
 				break;
+
 			case 'S':
-				muda_voo = AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos);
-				if (muda_voo){
-					total_voos[0] -= 2;
-				}
+				AdicionaRemoveVoo(grafo, aeroportos, numero_aeroportos, IDAEVOLTA, REMOVE, popular, total_voos);
 				break;
 
 			case 'N':
