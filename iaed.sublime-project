@@ -6,6 +6,9 @@
 		},
 		{
 			"path": "casos_teste"
+		},
+		{
+			"path": "testes_publicos"
 		}
 	]
 }

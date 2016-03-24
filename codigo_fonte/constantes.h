@@ -39,6 +39,7 @@ int OrdenaHistograma(const void *a, const void *b);
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
 int PesquisaBinariaHistograma(Histograma hist[], int a_procurar, int n_hist);
 void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, bool crono);
+void InsertionSortHistrograma(Histograma hist[], int n_hist);
 
 /*funcoes_comandos.h*/
 void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos, Voo popular[]);
@@ -50,4 +51,3 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos);
 void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos);
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos);
 void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], bool encerra);
-void InsertionSortHistrograma(Histograma hist[], int n_hist);

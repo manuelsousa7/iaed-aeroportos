@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mac",
+				"mac_int"
+			],
+			[
 				"ar",
 				"aeroportos"
 			],
@@ -47,54 +51,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "codigo_fonte/main.c",
-			"settings":
-			{
-<<<<<<< HEAD
-				"buffer_size": 2618,
-=======
-				"buffer_size": 2787,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "codigo_fonte/funcoes_comandos.h",
-			"settings":
-			{
-<<<<<<< HEAD
-				"buffer_size": 8859,
-=======
-				"buffer_size": 11777,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "codigo_fonte/funcoes_auxiliares.h",
-			"settings":
-			{
-<<<<<<< HEAD
-				"buffer_size": 1762,
-=======
-				"buffer_size": 1777,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "codigo_fonte/constantes.h",
-			"settings":
-			{
-<<<<<<< HEAD
-				"buffer_size": 840,
-=======
-				"buffer_size": 1812,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -128,27 +84,26 @@
 	},
 	"expanded_folders":
 	[
-<<<<<<< HEAD
-	],
-	"file_history":
-	[
-		"/home/goncasmage/iaed-aeroportos/README.md",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/funcoes_comandos.h",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/constantes.h",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/funcoes_auxiliares.h",
-		"/home/goncalao/iaed-aeroportos/codigo_fonte/main.c",
-=======
 		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste"
 	],
 	"file_history":
 	[
+		"/home/mvs/dsi-tp-gestaoltis/agente/teste2.py",
+		"/home/mvs/dsi-tp-gestaoltis/agente/agente.py",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/funcoes_auxiliares.h",
+		"/home/mvs/A.py",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/main.c",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/constantes.h",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/funcoes_comandos.h",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/README.md",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/run.sh",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/4.txt",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo04.out",
+		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/Makefile",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/comandos.txt",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo03.in",
-		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/Makefile",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/run.sh",
-		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo04.out",
-		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/funcoes_auxiliares.h",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo04.in",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/3.txt",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/exemplo03.out",
@@ -159,8 +114,6 @@
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/2.out",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/2.in",
 		"/home/mvs/Documents/projetos/iaed-aeroportos/casos_teste/1.in",
-		"/home/mvs/Documents/projetos/iaed-aeroportos/codigo_fonte/funcoes_comandos.h",
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
 		"/home/msousa/projetos/iaed-aeroportos/codigo_fonte/codigo_fonte.c",
 		"/home/msousa/projetos/iaed-nome/codigo_fonte/codigo_fonte.c",
 		"/home/msousa/Dropbox/Documentos/Arquivos - Privado/Secundário/Programação de Sistemas Informáticos/Trabalho Final - QuickSort.cpp",
@@ -168,7 +121,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -182,6 +135,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"search",
+			"n_hist:",
+			"abert",
 			"OrdenaAeroportos",
 			"voo mais",
 			"%s\",",
@@ -209,6 +165,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"step1",
 			"i",
 			"d",
 			"ImprimeAeroportos",
@@ -223,187 +180,8 @@
 	"groups":
 	[
 		{
-<<<<<<< HEAD
-			"selected": 3,
-=======
-			"selected": 1,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "codigo_fonte/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-<<<<<<< HEAD
-						"buffer_size": 2618,
-=======
-						"buffer_size": 2787,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								394,
-								394
-=======
-								2074,
-								2074
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-=======
-						"translation.y": 192.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "codigo_fonte/funcoes_comandos.h",
-					"semi_transient": false,
-					"settings":
-					{
-<<<<<<< HEAD
-						"buffer_size": 8859,
-=======
-						"buffer_size": 11777,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								0,
-								0
-=======
-								10423,
-								10423
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-<<<<<<< HEAD
-						"translation.x": -0.0,
-						"translation.y": 4131.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-=======
-						"translation.x": 0.0,
-						"translation.y": 4220.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "codigo_fonte/funcoes_auxiliares.h",
-					"semi_transient": false,
-					"settings":
-					{
-<<<<<<< HEAD
-						"buffer_size": 1762,
-=======
-						"buffer_size": 1777,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								0,
-								0
-=======
-								632,
-								632
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 0.0,
-=======
-						"translation.y": 225.0,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "codigo_fonte/constantes.h",
-					"semi_transient": false,
-					"settings":
-					{
-<<<<<<< HEAD
-						"buffer_size": 840,
-=======
-						"buffer_size": 1812,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								127,
-								127
-=======
-								102,
-								102
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-<<<<<<< HEAD
-					"stack_index": 0,
-=======
-					"stack_index": 3,
->>>>>>> c802d909453ebfcc0739967b4b338e82a2d550be
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -446,7 +224,7 @@
 	"project": "iaed.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -455,6 +233,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"codigo_fonte/main.c"
+			]
 		],
 		"width": 0.0
 	},

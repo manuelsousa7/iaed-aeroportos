@@ -1,0 +1,234 @@
+*Aeroporto AAA inexistente
+RAE:9:0:0
+SER:11:0:0
+ULA:14:1:0
+YCZ:20:0:1
+Aeroporto com mais ligacoes YCZ:3
+*Impossivel remover voo ULA YCZ
+Aeroporto com mais rotas YCZ:4:5
+Aeroporto com mais rotas YCZ:4:5
+RAE:9:2:2
+SER:11:5:5
+UHF:22:3:2
+ULA:10:4:6
+YCZ:20:5:4
+*Capacidade de YCZ inalterada
+*Impossivel remover voo RT YCZ ULA
+*Impossivel adicionar voo RT RAE ULA
+*Impossivel adicionar voo RT ULA SER
+*Impossivel adicionar voo RT ULA SER
+*Impossivel adicionar voo RT ULA RAE
+*Impossivel adicionar voo RT ULA RAE
+*Impossivel remover voo RT YCZ UHF
+*Impossivel adicionar voo RT YCZ RAE
+*Impossivel remover voo RT UHF ULA
+*Impossivel adicionar voo RT SER RAE
+*Impossivel adicionar voo RT SER RAE
+*Impossivel adicionar voo RT RAE YCZ
+*Impossivel adicionar voo SER YCZ
+Voo mais popular ULA:SER:4
+*Impossivel adicionar voo YCZ ULA
+*Impossivel adicionar voo RT SER UHF
+*Impossivel adicionar voo RT RAE NXM
+*Impossivel adicionar voo ULA NXM
+*Impossivel adicionar voo RT UHF SER
+SER:11:5:6
+RAE:9:5:5
+ULA:10:4:6
+UHF:36:5:5
+NXM:1:0:0
+ARS:14:0:0
+*Impossivel adicionar voo NXM RAE
+*Impossivel adicionar voo RT YCZ ULA
+*Impossivel remover voo UHF NXM
+*Impossivel adicionar voo RT NXM ULA
+*Impossivel adicionar voo RT PIU YCZ
+Voos entre cidades ULA:UHF:0:0
+Aeroporto com mais ligacoes SER:3
+*Impossivel remover voo UHF RAE
+*Impossivel adicionar voo RT UHF NXM
+*Impossivel remover voo RT SER NXM
+*Impossivel adicionar voo RT NXM UHF
+*Impossivel remover voo UHF ULA
+*Capacidade de ARS inalterada
+*Impossivel adicionar voo SER NXM
+*Impossivel adicionar voo SER NXM
+Aeroporto com mais ligacoes SER:3
+Aeroporto com mais rotas SER:5:6
+*Impossivel adicionar voo RT ULA RAE
+*Impossivel adicionar voo RT ULA RAE
+*Impossivel remover voo YCZ RAE
+*Impossivel adicionar voo SER RAE
+*Impossivel adicionar voo SER RAE
+*Impossivel adicionar voo YCZ PIU
+*Impossivel adicionar voo YCZ ARS
+Aeroporto com mais rotas SER:5:6
+*Impossivel adicionar voo RT SER RAE
+ACY:1:1:1
+NXM:1:-1:0
+PIU:5:-2:-3
+RAE:9:3:5
+SER:11:5:6
+UHF:36:5:5
+ULA:10:4:6
+Aeroporto com mais ligacoes SER:3
+*Impossivel adicionar voo RT ACY YCZ
+*Capacidade de YCZ inalterada
+*Impossivel adicionar voo RT UHF ULA
+Voo mais popular ARS:PIU:5
+*Impossivel adicionar voo RT NXM ARS
+*Impossivel adicionar voo RT YCZ PIU
+Voos entre cidades UHF:RRD:0:0
+*Impossivel adicionar voo RT YCZ NXM
+*Impossivel adicionar voo RT ACY YCZ
+*Impossivel adicionar voo UHF ARS
+Voos entre cidades ULA:RAE:0:0
+*Impossivel remover voo RT NXM UHF
+*Impossivel adicionar voo RT ACY PIU
+*Impossivel adicionar voo RAE SER
+*Impossivel adicionar voo SER ULA
+*Impossivel adicionar voo SER ULA
+*Impossivel adicionar voo RT ARS SER
+*Capacidade de YCZ inalterada
+Voo mais popular ARS:PIU:5
+SER:11:5:6
+RAE:9:2:5
+ULA:10:4:6
+UHF:36:6:6
+NXM:1:1:-1
+PIU:5:-2:-3
+ACY:1:1:1
+RRD:13:1:3
+HFL:16:0:0
+KMN:1:0:0
+NER:15:0:0
+Voo mais popular ARS:PIU:5
+SER:11:5:6
+RAE:9:2:5
+ULA:10:4:6
+UHF:36:6:6
+NXM:1:1:-1
+PIU:5:-2:-3
+ACY:1:1:1
+RRD:13:1:3
+HFL:16:0:0
+KMN:1:0:0
+NER:15:0:0
+*Impossivel adicionar voo SER ULA
+*Impossivel adicionar voo SER ULA
+*Impossivel adicionar voo RT ARS ULA
+*Impossivel adicionar voo RT SER YCZ
+*Impossivel remover voo ULA SER
+Voos entre cidades ACY:UHF:0:0
+*Impossivel adicionar voo NER ULA
+*Impossivel adicionar voo YCZ NER
+*Impossivel remover voo RRD WFI
+*Impossivel adicionar voo ACY ARS
+*Capacidade de YCZ inalterada
+*Impossivel adicionar voo RT YCZ RAE
+Voos entre cidades ULA:SER:0:0
+*Impossivel adicionar voo RT WGA KMN
+*Impossivel adicionar voo ARS YCZ
+*Impossivel remover voo RT RAE ULA
+*Impossivel adicionar voo KMN RRD
+-4:1
+-2:1
+-1:1
+0:2
+1:1
+3:1
+5:1
+8:1
+10:1
+11:1
+12:1
+*Impossivel remover voo RT RRD ACY
+*Impossivel adicionar voo RT ARS RRD
+*Impossivel remover voo ARS PIU
+*Impossivel remover voo RAE UHF
+*Impossivel remover voo RT RAE ARS
+*Impossivel remover voo NXM ULA
+*Impossivel adicionar voo RAE SER
+*Impossivel adicionar voo RT ARS PIU
+*Impossivel adicionar voo ACY UHF
+Aeroporto com mais ligacoes WFI:4
+*Impossivel adicionar voo RT HFL ARS
+Aeroporto com mais rotas UHF:6:6
+ACY:1:1:0
+HFL:16:-2:0
+JLF:12:0:0
+JMP:15:0:0
+NER:15:-1:0
+NXM:1:2:-1
+PIU:5:-2:-2
+RAE:9:2:6
+RRD:13:2:3
+SER:11:5:6
+UHF:36:6:6
+ULA:10:4:6
+WFI:12:1:3
+WGA:20:0:0
+Aeroporto com mais rotas UHF:6:6
+*Impossivel adicionar voo RT ULA KMN
+*Impossivel adicionar voo RRD ARS
+*Impossivel adicionar voo UHF NXM
+SER:11:5:6
+RAE:9:3:6
+ULA:10:4:6
+UHF:36:6:6
+NXM:1:2:-1
+PIU:5:-2:-2
+ACY:1:1:0
+RRD:13:3:5
+HFL:16:-2:0
+NER:15:-1:1
+WGA:20:0:0
+WFI:12:2:5
+JLF:12:2:0
+JMP:15:1:1
+Aeroporto com mais rotas UHF:6:6
+Voos entre cidades UHF:KMN:0:1
+*Impossivel adicionar voo RT NXM WFI
+Voos entre cidades WGA:RAE:0:0
+Aeroporto com mais ligacoes WFI:7
+*Impossivel adicionar voo UHF ARS
+-4:1
+-1:1
+0:2
+1:2
+2:2
+8:2
+9:1
+10:1
+11:1
+12:1
+*Impossivel adicionar voo RT RAE UHF
+*Impossivel adicionar voo RT RAE WFI
+*Impossivel remover voo RT WGA YCZ
+*Impossivel remover voo RT WFI ULA
+*Impossivel adicionar voo NXM YCZ
+Voos entre cidades UHF:JLF:0:0
+*Impossivel adicionar voo RT UHF YCZ
+*Impossivel remover voo RT UHF HFL
+-3:1
+-1:1
+1:3
+2:2
+4:1
+8:2
+9:1
+10:1
+11:1
+12:1
+*Impossivel adicionar voo RRD ULA
+*Impossivel adicionar voo ARS KMN
+*Impossivel adicionar voo ARS JMP
+*Impossivel adicionar voo YCZ UHF
+*Impossivel adicionar voo UHF SER
+*Impossivel remover voo UHF HFL
+*Impossivel remover voo ULA JMP
+Voos entre cidades UHF:SER:0:0
+Aeroporto com mais rotas UHF:6:6
+*Impossivel adicionar voo RT NER YCZ
+Voos entre cidades KMN:WGA:0:0
+32:21
