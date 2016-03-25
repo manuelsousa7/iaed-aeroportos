@@ -62,7 +62,8 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 {
 	int i;
 	for (i = 0 ; i < numero_aeroportos; i++){
-		printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
+        //if(aeroportos[i].estado==true)
+		  printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
     }
 }
 
@@ -455,7 +456,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
     hist[0].soma=aeroportos[0].soma;
     hist[0].n=1;
     for (i=1;i<numero_aeroportos;i++){
-        if(aeroportos[i].estado==true){
+        //if(aeroportos[i].estado==true){
             index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
             if(index==-1){
                 hist[n_hist].soma=aeroportos[i].soma;
@@ -464,7 +465,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
             }
             else
                 hist[index].n++;
-        }
+        //}
     }
     qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
     for(i=0;i<n_hist;i++)
