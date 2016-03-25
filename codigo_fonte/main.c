@@ -40,17 +40,17 @@ int main()
 	Voo popular[1];
 	char c;
 	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS],int1_input;
-	long int total_voos[0];
+	long int total_voos[1];
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS);
 	while (1) {
 		c = getchar();
 		switch (c){
 			case 'A':
-				CriaAeroporto(aeroportos, numero_aeroportos, popular);
+				CriaAeroporto(aeroportos, numero_aeroportos);
 				numero_aeroportos++;
 				break;
 			case 'I':
-				AlteraCapacidadeAeroporto(grafo, aeroportos, numero_aeroportos);
+				AlteraCapacidadeAeroporto(aeroportos, numero_aeroportos);
 				break;
 
 			case 'F':
@@ -74,6 +74,9 @@ int main()
 				break;
 
 			case 'P':
+
+				//e se nao houver voos ?????????????????????????????????????????
+				//limitar a pesquisa pelos voos != 0 ???????????????????????????
 				AeroportoPopular(aeroportos, numero_aeroportos);
 				break;
 
