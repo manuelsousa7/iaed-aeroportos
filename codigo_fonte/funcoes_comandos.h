@@ -403,9 +403,12 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 			maior = (aeroportos[iterador].soma);
 			indice = iterador;
 		}
-		else if (maior == (aeroportos[iterador].soma && aeroportos[iterador].crono < aeroportos[indice].crono)){
-			maior = (aeroportos[iterador].soma);
-			indice = iterador;
+		else 
+		if (maior == (aeroportos[iterador].soma)){
+			if(aeroportos[iterador].crono < aeroportos[indice].crono){
+				maior = (aeroportos[iterador].soma);
+				indice = iterador;
+			}
 		}
 
 	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].partem,aeroportos[indice].chegam);
