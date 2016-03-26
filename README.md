@@ -1,7 +1,7 @@
 # Rede de Aeroportos (Projeto 1)
 
 **Membros do Grupo:**
-- Gonçalo Marques
+- Gonçalo Marques (84719)
 - Manuel Sousa (84740)
 
 **Linguagem do Projeto:** C (gcc) <br/>
@@ -20,11 +20,11 @@ Para Compilar:
 
 Código Fonte:
 ==========
-+ main.c:
++ main.c
 -> Contem o menu de comandos, chamada dos modulos correspondestes a cada comando
-+ constantes.h:
++ constantes.h
 -> Contem todas definições de constantes, estruturas e headers de funções
-+ funcoes_comandos.h:
++ funcoes_comandos.h
 -> Contem apenas as funções principais que são chamadas pelo main.c correspondentes aos comandos
-+ funcoes_auxiliares.h:
++ funcoes_auxiliares.h
 -> Contem funções auxiliares de suporte aos comandos. Algoritmos de Ordenação (QuickSort e InsertionSort)  e Pesquisa Binária.
