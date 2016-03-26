@@ -369,6 +369,7 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
  * Side-Effects: none
  * Description:  imprime o aeroporto com mais voos a sair e a entrar
  *****************************************************************************************/
+
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos)
 {
 	int iterador, maior = (aeroportos[0].soma), indice = 0;
@@ -464,7 +465,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[], bool encerra)
 {
     char str1_input[MAXID];
-    int index, i;
+    int index,i;
     scanf("%s",str1_input);
     index = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
     if(encerra==1 && index!=-1){
