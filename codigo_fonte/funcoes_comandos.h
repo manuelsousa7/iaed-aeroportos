@@ -62,8 +62,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
 {
 	int i;
 	for (i = 0 ; i < numero_aeroportos; i++){
-        //if(aeroportos[i].estado==true)
-		  printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
+	  printf("%s:%d:%d:%d\n",aeroportos[i].id,aeroportos[i].capacidade,aeroportos[i].partem,aeroportos[i].chegam);
     }
 }
 
@@ -161,8 +160,9 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					}
 
 					AdicionaRemove(grafo, aeroportos, remover, total_voos, index_1, index_2);
-					AdicionaRemove(grafo, aeroportos, remover, total_voos, index_2, index_1);
 					VerificaPopular(grafo, aeroportos, popular, ida_volta, total_voos, index_1, index_2, str1_input, str2_input);
+
+					AdicionaRemove(grafo, aeroportos, remover, total_voos, index_2, index_1);
 					VerificaPopular(grafo, aeroportos, popular, ida_volta, total_voos, index_2, index_1, str2_input, str1_input);
 				}
 
@@ -253,7 +253,6 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo pop
 	}
 	else
 	{
-
 		if (grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] >= popular[0].voos)
 		{
 			if (grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] == popular[0].voos)
@@ -305,55 +304,35 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo pop
  **************************************************************************************************************/
 void RemovePopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[])
 {
-	int i,j;
-	if (total_voos[0] != 0)
+	int i, j, maior = -1, maior_i = -1, maior_j = -1, maior_partida_crono = 1000, maior_chegada_crono = 1000;
+	for (i = 0; i < numero_aeroportos; i++)
 	{
-		int maior = 0, maior_i = -1, maior_j = -1;
-		for (i = 0; i < numero_aeroportos; i++)
+		for (j = 0; j < numero_aeroportos; j++)
 		{
-			for (j = 0; j < numero_aeroportos; j++)
+			if (grafo[j][i] > maior)
 			{
-				if (grafo[i][j] >= maior)
-				{
-					if (grafo[i][j] == maior)
-					{
-						if (popular[0].partida_crono >= aeroportos[i].crono)
-						{
-							if (popular[0].partida_crono == aeroportos[i].crono)
-							{
-								if (popular[0].chegada_crono > aeroportos[j].crono)
-								{
-									maior_i = i;
-									maior_j = j;
-									maior = grafo[i][j];
-								}
-							}
-							else
-							{
-								maior_i = i;
-								maior_j = j;
-								maior = grafo[i][j];
-							}
-						}
-					}
-					else
-					{
-						maior_i = i;
-						maior_j = j;
-						maior = grafo[i][j];
-					}
-				}
+				maior_i = i;
+				maior_j = j;
+				maior = grafo[j][i];
+				maior_partida_crono = aeroportos[maior_i].crono;
+				maior_chegada_crono = aeroportos[maior_j].crono;
 			}
 		}
-		if (maior_i != -1 && maior_j != -1)
-		{
-			popular[0].voos = maior;
-			strcpy(popular[0].partida,aeroportos[maior_i].id);
-			popular[0].partida_crono = aeroportos[maior_i].crono;
-			strcpy(popular[0].chegada,aeroportos[maior_j].id);
-			popular[0].chegada_crono = aeroportos[maior_j].crono;
-		}
 	}
+
+	int t, indice_1 = 0, indice_2 = 0;
+	//procura o aeroporto certo
+	for (t = 0; t < numero_aeroportos; t++)
+		if (aeroportos[t].crono == maior_i)
+			indice_1 = t;
+		else if (aeroportos[t].crono == maior_j)
+			indice_2 = t;
+
+	popular[0].voos = maior;
+	strcpy(popular[0].partida,aeroportos[indice_1].id);
+	popular[0].partida_crono = maior_partida_crono;
+	strcpy(popular[0].chegada,aeroportos[indice_2].id);
+	popular[0].chegada_crono = maior_chegada_crono;
 }
 /******************************************************************************************
  * RetornaVoo()
@@ -394,22 +373,20 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
  * Side-Effects: none
  * Description:  imprime o aeroporto com mais voos a sair e a entrar
  *****************************************************************************************/
-void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
-	int maior = 0, indice = 0;
-	int iterador;
-	maior = (aeroportos[0].soma);
 
+void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos)
+{
+	int iterador, maior = (aeroportos[0].soma), indice = 0;
 	for (iterador = 1; iterador < numero_aeroportos; iterador++)
-		if (maior < (aeroportos[iterador].soma)){
+		if (maior < (aeroportos[iterador].soma))
+		{
 			maior = (aeroportos[iterador].soma);
 			indice = iterador;
 		}
-		else 
-		if (maior == (aeroportos[iterador].soma)){
-			if(aeroportos[iterador].crono < aeroportos[indice].crono){
-				maior = (aeroportos[iterador].soma);
-				indice = iterador;
-			}
+		else if (maior == aeroportos[iterador].soma && aeroportos[iterador].crono < aeroportos[indice].crono)
+		{
+			maior = (aeroportos[iterador].soma);
+			indice = iterador;
 		}
 
 	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].partem,aeroportos[indice].chegam);
@@ -489,7 +466,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 * Side-Effects: none
 * Description:  reabre ou encerra o aeroporto e apaga os voos no segundo caso
 *****************************************************************************************/
-void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], bool encerra)
+void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[], bool encerra)
 {
     char str1_input[MAXID];
     int index,i;
@@ -519,6 +496,8 @@ void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], 
     			grafo[aeroportos[index].crono][aeroportos[i].crono] = 0;
     		}
     	}
+
+    	RemovePopular(grafo, aeroportos, numero_aeroportos, popular, total_voos);
     }
     else if(encerra==0 && index!=-1)
         aeroportos[index].estado=true;
