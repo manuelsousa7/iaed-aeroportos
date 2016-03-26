@@ -74,9 +74,6 @@ int main()
 				break;
 
 			case 'P':
-
-				//e se nao houver voos ?????????????????????????????????????????
-				//limitar a pesquisa pelos voos != 0 ???????????????????????????
 				AeroportoPopular(aeroportos, numero_aeroportos);
 				break;
 
@@ -89,11 +86,11 @@ int main()
 				break;
 
 			case 'C':
-				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,1);
+				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, popular, total_voos ,1);
 				break;
 
 			case 'O':
-				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,0);
+				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, popular, total_voos ,0);
 				break;
 			case 'L':
 				scanf("%d",&int1_input);
