@@ -305,12 +305,13 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo pop
  **************************************************************************************************************/
 void RemovePopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[])
 {
+	int i,j;
 	if (total_voos[0] != 0)
 	{
 		int maior = 0, maior_i = -1, maior_j = -1;
-		for (int i = 0; i < numero_aeroportos; i++)
+		for (i = 0; i < numero_aeroportos; i++)
 		{
-			for (int j = 0; j < numero_aeroportos; j++)
+			for (j = 0; j < numero_aeroportos; j++)
 			{
 				if (grafo[i][j] >= maior)
 				{
@@ -395,10 +396,10 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
  *****************************************************************************************/
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 	int maior = 0, indice = 0;
-
+	int iterador;
 	maior = (aeroportos[0].soma);
 
-	for (int iterador = 1; iterador < numero_aeroportos; iterador++)
+	for (iterador = 1; iterador < numero_aeroportos; iterador++)
 		if (maior < (aeroportos[iterador].soma)){
 			maior = (aeroportos[iterador].soma);
 			indice = iterador;
@@ -491,7 +492,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, long int total_voos[], bool encerra)
 {
     char str1_input[MAXID];
-    int index;
+    int index,i;
     scanf("%s",str1_input);
     index = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
     if(encerra==1 && index!=-1){
@@ -500,7 +501,7 @@ void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], 
         aeroportos[index].chegam=0;
         aeroportos[index].soma=0;
         aeroportos[index].conectados = 0;
-    	for (int i = 0; i < numero_aeroportos; i++){
+    	for (i = 0; i < numero_aeroportos; i++){
     		if (grafo[aeroportos[i].crono][aeroportos[index].crono] != 0){
     			if (grafo[aeroportos[index].crono][aeroportos[i].crono] == 0)
     				aeroportos[i].conectados -= 1;
