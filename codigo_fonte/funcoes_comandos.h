@@ -132,7 +132,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 		if (ida_volta){
 			//se for para remover
 			if (remover) {
-				if (grafo[aeroportos[index_1].crono][aeroportos[index_2].crono] > 0 && grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] > 0){
+				if (grafo[aeroportos[index_1].crono][aeroportos[index_2].crono] > 1 && grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] > 1){
 
 					AdicionaRemove(grafo, aeroportos, remover, total_voos, index_1, index_2);
 					AdicionaRemove(grafo, aeroportos, remover, total_voos, index_2, index_1);
@@ -165,8 +165,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 				}
 
 				else{
-					if (aeroportos[index_1].soma + 2 > aeroportos[index_1].capacidade || aeroportos[index_2].soma + 2 > aeroportos[index_2].capacidade)
-						printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
+					printf("*Impossivel adicionar voo RT %s %s\n", str1_input, str2_input);
 				}
 			}
 		}
