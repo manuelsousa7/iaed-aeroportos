@@ -82,7 +82,7 @@ int main()
 				break;
 
 			case 'V':
-				RemovePopular(grafo, aeroportos, numero_aeroportos, popular, total_voos);
+				VerificaPopular(grafo, aeroportos, numero_aeroportos, popular, total_voos);
 				break;
 
 			case 'C':

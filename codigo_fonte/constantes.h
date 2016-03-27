@@ -48,7 +48,6 @@ void AlteraCapacidadeAeroporto(Aeroporto aeroportos[], int numero_aeroportos);
 void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos);
 void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, bool ida_volta, bool remover, Voo popular[], long int total_voos[]);
 void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool remover, long int total_voos[], int index_1, int index_2);
-void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo popular[], bool ida_volta, long int total_voos[], int index_1, int index_2, char str1_input[], char str2_input[]);
 void RemovePopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[]);
 void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos);
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos);

@@ -238,75 +238,8 @@ void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool rem
 	aeroportos[index_2].soma += num;
 	total_voos[0] += num;
 }
-
 /**************************************************************************************************************
  * VerificaPopular()
- *
- * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
- *				aeroportos:   		estrutura dos aeroportos (todos)
- *				popular:			vetor de dimensao 1 que contem informacoes sobre o aeroporto mais popular
- *				ida_volta:			boolean a true se a operacao for de ida e volta
- *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
- *				index_1:			indice do aeroporto de partida
- *				index_2:			indice do aeroporto de chegada
- *				str1_input:			nome do aeroporto de partida
- *				str2_input:			nome do aeroporto de chegada
- *
- * Returns: void
- * Side-Effects: none
- * Description:  verifica se os voos entre os dois aeroportos passam a ser populares
- **************************************************************************************************************/
-void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo popular[], bool ida_volta, long int total_voos[], int index_1, int index_2, char str1_input[], char str2_input[])
-{
-	if (total_voos[0] == 1)
-	{
-		popular[0].voos = grafo[aeroportos[index_2].crono][aeroportos[index_1].crono];
-		strcpy(popular[0].partida,str1_input);
-		popular[0].partida_crono = aeroportos[index_1].crono;
-		strcpy(popular[0].chegada,str2_input);
-		popular[0].chegada_crono = aeroportos[index_2].crono;
-	}
-	else
-	{
-		if (grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] >= popular[0].voos)
-		{
-			if (grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] == popular[0].voos)
-			{
-				if (popular[0].partida_crono >= aeroportos[index_1].crono)
-				{
-					if (popular[0].partida_crono == aeroportos[index_1].crono)
-					{
-						if (popular[0].chegada_crono > aeroportos[index_2].crono)
-						{
-							strcpy(popular[0].partida,str1_input);
-							popular[0].partida_crono = aeroportos[index_1].crono;
-							strcpy(popular[0].chegada,str2_input);
-							popular[0].chegada_crono = aeroportos[index_2].crono;
-						}
-					}
-					else
-					{
-						strcpy(popular[0].partida,str1_input);
-						popular[0].partida_crono = aeroportos[index_1].crono;
-						strcpy(popular[0].chegada,str2_input);
-						popular[0].chegada_crono = aeroportos[index_2].crono;
-					}
-				}
-			}
-			else
-			{
-				popular[0].voos = grafo[aeroportos[index_2].crono][aeroportos[index_1].crono];
-				strcpy(popular[0].partida,str1_input);
-				popular[0].partida_crono = aeroportos[index_1].crono;
-				strcpy(popular[0].chegada,str2_input);
-				popular[0].chegada_crono = aeroportos[index_2].crono;
-			}
-		}
-	}
-}
-
-/**************************************************************************************************************
- * RemovePopular()
  *
  * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
  *				aeroportos:   		estrutura dos aeroportos (todos)
@@ -318,7 +251,7 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], Voo pop
  * Side-Effects: none
  * Description:  verifica se os voos entre os dois aeroportos deixam de ser populares
  **************************************************************************************************************/
-void RemovePopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[])
+void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[])
 {
 	int i, j, maior = -1, maior_i = -1, maior_j = -1, maior_partida_crono = 1000, maior_chegada_crono = 1000;
 	for (i = 0; i < numero_aeroportos; i++)
