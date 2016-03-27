@@ -11,7 +11,7 @@
 				#include "constantes.h"
 				#include "funcoes_comandos.h"
 				#include "funcoes_auxiliares.h"
- * DESCRIPTION: Rede de Aeroportos - função main.
+ * DESCRIPTION: Rede de Aeroportos - funçao main.
  * DIAGNOSTICS: tested
  * USAGE:       make all
 				make run
@@ -32,7 +32,7 @@
 * Arguments: nenhum
 * Returns: 0
 * Side-Effects: none
-* Description: 	menu de comandos com chamada dos vários modulos (Apenas)		   
+* Description: 	menu de comandos com chamada dos varios modulos (Apenas)		   
 *****************************************************************************/
 int main()
 {

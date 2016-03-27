@@ -76,7 +76,7 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 *
 * Arguments:	hist:   	estrutura dos elementos do histrograma (todos)
 *              	a_procurar: valor a procurar
-*				n_hist:		numero de somas diferentes já existentes no array de estruturas
+*				n_hist:		numero de somas diferentes ja existentes no array de estruturas
 *
 * Returns: int 	retorna o indice apos procurar, caso nao encontre retorna -1
 * Side-Effects: none
@@ -127,7 +127,7 @@ void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, bool 
 * InsertionSortHistrograma()
 *
 * Arguments:	hist:   	estrutura dos elementos do histrograma (todos)
-*				n_hist:		numero de somas diferentes já existentes no array de estruturas
+*				n_hist:		numero de somas diferentes ja existentes no array de estruturas
 *
 * Returns: void
 * Side-Effects: none

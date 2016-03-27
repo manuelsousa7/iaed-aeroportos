@@ -75,7 +75,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos)
  *              numero_aeroportos:  numero de aeroportos atuais
  *				ida_volta:			boolean a true se a operacao for de ida e volta
  *				remover:			boolean a true se a operacao for de remocao
- *				popular:			vetor de dimensao 1 que contém informacoes sobre o aeroporto mais popular
+ *				popular:			vetor de dimensao 1 que contem informacoes sobre o aeroporto mais popular
  *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
  *
  * Returns: void
@@ -214,13 +214,13 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
  * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
  *				aeroportos:   		estrutura dos aeroportos (todos)
  *				remover:			boolean a true se a operacao for de remocao
- *				total_voos:			vetor de dimensao 1 que indica o número total de voos
+ *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
  *				index_1:			indice do aeroporto de partida
  *				index_2:			indice do aeroporto de chegada
  *
  * Returns: void
  * Side-Effects: none
- * Description:  adiciona ou remove um voo de uma direção
+ * Description:  adiciona ou remove um voo de uma direcao
  ******************************************************************************************/
 void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool remover, long int total_voos[], int index_1, int index_2)
 {
@@ -244,9 +244,9 @@ void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool rem
  *
  * Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
  *				aeroportos:   		estrutura dos aeroportos (todos)
- *				popular:			vetor de dimensao 1 que contém informações sobre o aeroporto mais popular
+ *				popular:			vetor de dimensao 1 que contem informacoes sobre o aeroporto mais popular
  *				ida_volta:			boolean a true se a operacao for de ida e volta
- *				total_voos:			vetor de dimensao 1 que indica o número total de voos
+ *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
  *				index_1:			indice do aeroporto de partida
  *				index_2:			indice do aeroporto de chegada
  *				str1_input:			nome do aeroporto de partida
@@ -463,7 +463,6 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos)
     hist[0].soma=aeroportos[0].soma;
     hist[0].n=1;
     for (i=1;i<numero_aeroportos;i++){
-        //if(aeroportos[i].estado==true){
             index=PesquisaBinariaHistograma(hist,aeroportos[i].soma,n_hist);
             if(index==-1){
                 hist[n_hist].soma=aeroportos[i].soma;
@@ -472,7 +471,6 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos)
             }
             else
                 hist[index].n++;
-        //}
     }
     qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
     for(i=0;i<n_hist;i++)
