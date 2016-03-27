@@ -82,7 +82,7 @@ int main()
 				break;
 
 			case 'V':
-				printf("Voo mais popular %s:%s:%d\n", popular[0].partida, popular[0].chegada, popular[0].voos);
+				RemovePopular(grafo, aeroportos, numero_aeroportos, popular, total_voos);
 				break;
 
 			case 'C':
