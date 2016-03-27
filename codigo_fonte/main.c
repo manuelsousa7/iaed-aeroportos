@@ -1,26 +1,25 @@
 /******************************************************************************
- * File Name:   main.c
- * Author:      Gonçalo Marques (84719) / Manuel Sousa (84740)
- * Revision:
- * NAME:        Rede de Aeroportos - IST/IAED - 2016 2º Semestre
- * SYNOPSIS:    #include <stdio.h>
-				#include <string.h>
-				#include <stdbool.h>
-				#include <stdlib.h>
-				#include <math.h>
-				#include "constantes.h"
-				#include "funcoes_comandos.h"
-				#include "funcoes_auxiliares.h"
- * DESCRIPTION: Rede de Aeroportos - funçao main.
- * DIAGNOSTICS: tested
- * USAGE:       make all
-				make run
- *****************************************************************************/
+* File Name:   main.c
+* Author:      Gonçalo Marques (84719) / Manuel Sousa (84740)
+* Revision:
+* NAME:        Rede de Aeroportos - IST/IAED - 2016 2º Semestre
+* SYNOPSIS:    #include <stdio.h>
+			   #include <string.h>
+			   #include <stdbool.h>
+			   #include <stdlib.h>
+			   #include "constantes.h"
+			   #include "funcoes_comandos.h"
+			   #include "funcoes_auxiliares.h"
+* DESCRIPTION: Rede de Aeroportos - funçao main.
+* DIAGNOSTICS: tested
+* USAGE:       make clean
+			   make all
+			   make run
+*****************************************************************************/
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <math.h>
 #include "constantes.h"
 #include "funcoes_comandos.h"
 #include "funcoes_auxiliares.h"
@@ -92,19 +91,20 @@ int main()
 			case 'O':
 				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, popular, total_voos ,0);
 				break;
+				
 			case 'L':
 				scanf("%d",&int1_input);
 				if(int1_input == 0){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,1);
 					ImprimeAeroportos(aeroportos, numero_aeroportos);
-				}
-				else if(int1_input==1){
+				} 
+				else 
+				if(int1_input==1){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 					//InsertionSortAeroporto(aeroportos,numero_aeroportos,0);
 					ImprimeAeroportos(aeroportos, numero_aeroportos);
-				}
-				else{
+				} else {
 					HistogramaImprime(aeroportos, numero_aeroportos);
 				}
 				break;
