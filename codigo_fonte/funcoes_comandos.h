@@ -1,8 +1,8 @@
 /******************************************************************************
 * CriaAeroporto()
 *
-* Arguments:   aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+* Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: 	void
 * Side-Effects: none
@@ -29,8 +29,8 @@ void CriaAeroporto(Aeroporto aeroportos[], int numero_aeroportos){
 /************************************************************************************************
 * AlteraCapacidadeAeroporto()
 *
-* Arguments:   aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+* Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: void
 * Side-Effects: none
@@ -52,7 +52,7 @@ void AlteraCapacidadeAeroporto(Aeroporto aeroportos[], int numero_aeroportos){
 * ImprimeAeroportos()
 *
 * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: void
 * Side-Effects: none
@@ -68,9 +68,9 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos){
 /*****************************************************************************************************************
 * AdicionaRemoveVoo()
 *
-* Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *				ida_volta:			boolean a true se a operacao for de ida e volta
 *				remover:			boolean a true se a operacao for de remocao
 *				popular:			vetor de dimensao 1 que contem informacoes sobre o aeroporto mais popular
@@ -171,7 +171,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 /******************************************************************************************
 * AdicionaRemove()
 *
-* Arguments:   	grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
 *				remover:			boolean a true se a operacao for de remocao
 *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
@@ -200,9 +200,9 @@ void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool rem
 /**************************************************************************************************************
 * VerificaPopular()
 *
-* Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *				popular:			vetor de dimensao 1 que contém informações sobre o aeroporto mais popular
 *				total_voos:			vetor de dimensao 1 que indica o número total de voos
 *
@@ -234,9 +234,9 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int num
 	}
 
 	popular[0].voos = maior;
-	strcpy(popular[0].partida,aeroportos[indice_1].id);
+	strcpy(popular[0].partida, aeroportos[indice_1].id);
 	popular[0].partida_crono = maior_partida_crono;
-	strcpy(popular[0].chegada,aeroportos[indice_2].id);
+	strcpy(popular[0].chegada, aeroportos[indice_2].id);
 	popular[0].chegada_crono = maior_chegada_crono;
 
 	printf("Voo mais popular %s:%s:%d\n", popular[0].partida, popular[0].chegada, popular[0].voos);
@@ -244,9 +244,9 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int num
 /******************************************************************************************
 * RetornaVoo()
 *
-* Arguments:   grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: void
 * Side-Effects: none
@@ -273,7 +273,7 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
 * AeroportoPopular()
 *
 * Arguments:	aeroportos:   		estrutura dos aeroportos (todos)
-*              numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: void
 * Side-Effects: none
@@ -281,6 +281,7 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
 *****************************************************************************************/
 void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 	int i, maior = (aeroportos[0].soma), indice = 0;
+
 	for (i = 1; i < numero_aeroportos; i++){
 		if (maior < (aeroportos[i].soma)){
 			maior = (aeroportos[i].soma);
@@ -292,13 +293,13 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 		}
 	}
 
-	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id,aeroportos[indice].partem,aeroportos[indice].chegam);
+	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id, aeroportos[indice].partem, aeroportos[indice].chegam);
 }
 /****************************************************************************
 * AeroportoConectado()
 *
-* Arguments:	 aeroportos:   		 estrutura dos aeroportos (todos)
-*               numero_aeroportos:  numero de aeroportos atuais
+* Arguments:	aeroportos:   		 estrutura dos aeroportos (todos)
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: 	 void
 * Side-Effects: none
@@ -320,13 +321,13 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 		}
 	}
 
-	printf("Aeroporto com mais ligacoes %s:%d\n", aeroportos[indice].id,maior);
+	printf("Aeroporto com mais ligacoes %s:%d\n", aeroportos[indice].id, maior);
 }
 /******************************************************************************************
 * HistogramaImprime()
 *
 * Arguments:	aeroportos:   		matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
-*              	numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *
 * Returns: void
 * Side-Effects: none
@@ -341,6 +342,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
     hist[0].n = 1;
 
     for (i = 1;i < numero_aeroportos;i++){
+    		InsertionSortHistrograma(hist , n_hist);
             index = PesquisaBinariaHistograma(hist, aeroportos[i].soma, n_hist);
             if(index==-1){
                 hist[n_hist].soma = aeroportos[i].soma;
@@ -350,8 +352,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
             else
                 hist[index].n++;
     }
-
-    qsort(hist, n_hist, sizeof(Histograma), OrdenaHistograma);
+    InsertionSortHistrograma(hist , n_hist);
 
     for(i=0;i < n_hist;i++)
         printf("%d:%d\n", hist[i].soma, hist[i].n);
@@ -361,7 +362,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 *
 * Arguments:	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
 * 				aeroportos:   		estrutura dos aeroportos (abertos e fechados)
-*              	numero_aeroportos:  numero de aeroportos atuais
+*				numero_aeroportos:  numero de aeroportos atuais
 *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
 *				encerra:			booleano que indica se encerra ou se reabre aeroporto
 *
@@ -371,11 +372,11 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 *****************************************************************************************/
 void EncerraReabreAeroporto(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_aeroportos, Voo popular[], long int total_voos[], bool encerra){
     char str1_input[MAXID];
-    int index,i;
+    int index, i;
 
     scanf("%s", str1_input);
     index = PesquisaBinariaAeroportos(aeroportos, str1_input, numero_aeroportos);
-
+    
     if(encerra && index!=-1){
         aeroportos[index].estado = false;
         aeroportos[index].partem = 0;
