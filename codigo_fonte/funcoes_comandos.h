@@ -93,7 +93,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 	if (index_1 != -1 && index_2 != -1 && aeroportos[index_1].estado && aeroportos[index_2].estado){
 		//se for so de ida
 		if (!(ida_volta)){
-			//se for para remover
+			//se for para remover um voo
 			if (remover){
 				//se o numero de voos for maior que 0
 				if (grafo[aeroportos[index_2].crono][aeroportos[index_1].crono] > 0){
@@ -110,7 +110,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					printf("*Impossivel remover voo %s %s\n", str1_input, str2_input);
 				}
 
-			//se for para adicionar
+			//se for para adicionar um voo
 			} else {
 				//se os aeroportos nao tiverem excedido a capacidade
 				if (aeroportos[index_1].soma + 1 <= aeroportos[index_1].capacidade &&
@@ -131,7 +131,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 
 		//se for ida e volta
 		} else  {
-			//se for para remover
+			//se for para remover voos
 			if (remover){
 				//se houver pelo menos um voo de ida e volta no grafo
 				if (grafo[aeroportos[index_1].crono][aeroportos[index_2].crono] > 0 &&
@@ -150,7 +150,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 					printf("*Impossivel remover voo RT %s %s\n", str1_input, str2_input);
 				}
 
-			//se for para adicionar
+			//se for para adicionar voos
 			} else {
 				if (aeroportos[index_2].soma + 2 <= aeroportos[index_2].capacidade &&
 				aeroportos[index_1].soma + 2 <= aeroportos[index_1].capacidade){
