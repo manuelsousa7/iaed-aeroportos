@@ -10,7 +10,7 @@
 
 /*structs utilizados pelo programa*/
 typedef struct{
-	char id[4];
+	char id[MAXID];
 	int capacidade;
 	bool estado;
 	int crono;
