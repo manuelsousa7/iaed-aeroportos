@@ -68,7 +68,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos){
 /*****************************************************************************************************************
 * AdicionaRemoveVoo()
 *
-* Arguments:   	grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:   	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
 *              	numero_aeroportos:  numero de aeroportos atuais
 *				ida_volta:			boolean a true se a operacao for de ida e volta
@@ -189,7 +189,7 @@ void AdicionaRemoveVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int n
 /******************************************************************************************
 * AdicionaRemove()
 *
-* Arguments:	grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
 *				remover:			boolean a true se a operacao for de remocao
 *				total_voos:			vetor de dimensao 1 que indica o numero total de voos
@@ -219,7 +219,7 @@ void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool rem
 /**************************************************************************************************************
 * VerificaPopular()
 *
-* Arguments:   	grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:   	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
 *              	numero_aeroportos:  numero de aeroportos atuais
 *				popular:			vetor de dimensao 1 que contém informações sobre o aeroporto mais popular
@@ -265,7 +265,7 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int num
 /******************************************************************************************
 * RetornaVoo()
 *
-* Arguments:   	grafo:   			matrix com os voos entre os diferentes aeroportos
+* Arguments:   	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
 *				aeroportos:   		estrutura dos aeroportos (todos)
 *              	numero_aeroportos:  numero de aeroportos atuais
 *

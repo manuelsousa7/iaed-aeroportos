@@ -64,7 +64,7 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 	res = bsearch(&key, aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 	size_t index = res - aeroportos;
 	if (res == NULL)
-		return -1;
+		return -1;// nao encontrou
 	else
 		return index;
 }
