@@ -215,6 +215,7 @@ void AdicionaRemove(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], bool rem
 	aeroportos[index_2].soma += num;
 	total_voos[0] += num;
 }
+
 /**************************************************************************************************************
 * VerificaPopular()
 *
@@ -260,6 +261,7 @@ void VerificaPopular(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int num
 
 	printf("Voo mais popular %s:%s:%d\n", popular[0].partida, popular[0].chegada, popular[0].voos);
 }
+
 /******************************************************************************************
 * RetornaVoo()
 *
@@ -288,6 +290,7 @@ void RetornaVoo(int grafo[][MAXAEROPORTOS], Aeroporto aeroportos[], int numero_a
 	if (index_1 != -1 && index_2 != -1)
 		printf("Voos entre cidades %s:%s:%d:%d\n", str1_input, str2_input, grafo[aeroportos[index_2].crono][aeroportos[index_1].crono], grafo[aeroportos[index_1].crono][aeroportos[index_2].crono]);
 }
+
 /******************************************************************************************
 * AeroportoPopular()
 *
@@ -314,6 +317,7 @@ void AeroportoPopular(Aeroporto aeroportos[], int numero_aeroportos){
 
 	printf("Aeroporto com mais rotas %s:%d:%d\n", aeroportos[indice].id, aeroportos[indice].partem, aeroportos[indice].chegam);
 }
+
 /****************************************************************************
 * AeroportoConectado()
 *
@@ -342,6 +346,7 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 
 	printf("Aeroporto com mais ligacoes %s:%d\n", aeroportos[indice].id, maior);
 }
+
 /******************************************************************************************
 * HistogramaImprime()
 *
@@ -361,7 +366,8 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
     hist[0].n = 1;
 
     for (i = 1;i < numero_aeroportos;i++){
-    		InsertionSortHistrograma(hist , n_hist);
+    		//Nao e usado qsort porque e menos eficiente a ordenar vetores ja pre-ordenados
+    		InsertionSortHistrograma(hist , n_hist); 
             index = PesquisaBinariaHistograma(hist, aeroportos[i].soma, n_hist);
             if(index==-1){
                 hist[n_hist].soma = aeroportos[i].soma;
@@ -376,6 +382,7 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
     for(i=0;i < n_hist;i++)
         printf("%d:%d\n", hist[i].soma, hist[i].n);
 }
+
 /******************************************************************************************
 * EncerraReabreAeroporto()
 *
