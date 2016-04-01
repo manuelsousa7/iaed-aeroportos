@@ -24,7 +24,6 @@
 #include "funcoes_comandos.h"
 #include "funcoes_auxiliares.h"
 
-
 /******************************************************************************
 * main()
 *
@@ -85,11 +84,11 @@ int main(){
 				break;
 
 			case 'C':
-				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, popular, total_voos ,1);
+				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,1);
 				break;
 
 			case 'O':
-				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, popular, total_voos ,0);
+				EncerraReabreAeroporto(grafo, aeroportos,numero_aeroportos, total_voos ,0);
 				break;
 				
 			case 'L':

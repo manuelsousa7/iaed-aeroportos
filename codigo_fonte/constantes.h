@@ -39,7 +39,6 @@ int OrdenaAeroportosCronologicamente(const void *a, const void *b);
 int OrdenaHistograma(const void *a, const void *b);
 int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int numero_aeroportos);
 int PesquisaBinariaHistograma(Histograma hist[], int a_procurar, int n_hist);
-void InsertionSortAeroporto(Aeroporto aeroportos[], int numero_aeroportos, bool crono);
 void InsertionSortHistrograma(Histograma hist[], int n_hist);
 
 /*funcoes_comandos.h*/
