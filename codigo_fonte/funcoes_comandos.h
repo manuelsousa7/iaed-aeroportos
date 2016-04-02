@@ -65,7 +65,7 @@ void ImprimeAeroportos(Aeroporto aeroportos[],int numero_aeroportos){
 /*****************************************************************************************************************
 * AdicionaRemoveVoo()
 *
-* Arguments:   	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportosrtos
+* Arguments:   	grafo:   			matrix 2D que representa o grafo dos voos entre os diferentes aeroportos
 *				aeroportos:   		vetor que contem todos os aeroportos
 *              	numero_aeroportos:  numero de aeroportos atuais
 *				ida_volta:			boolean (true se a operacao for de ida e volta, false se for so de ida)
