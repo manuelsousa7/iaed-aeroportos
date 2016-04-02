@@ -5,8 +5,8 @@
 * NAME:        Rede de Aeroportos - IST/IAED - 2015/2016 2º Semestre
 * SYNOPSIS:    #include <stdio.h>
 			   #include <string.h>
-			   #include <stdbool.h>
-			   #include <stdlib.h>
+			   #include <stdbool.h> - bool's
+			   #include <stdlib.h> 	- qsort + bsearch
 			   #include "constantes.h"
 			   #include "funcoes_comandos.h"
 			   #include "funcoes_auxiliares.h"
