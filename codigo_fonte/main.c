@@ -29,24 +29,26 @@
 *
 * Arguments: nenhum
 * Returns: 0
-* Side-Effects: none
 * Description: 	menu de comandos com chamada dos varios modulos (Apenas)		   
 *****************************************************************************/
 int main(){
 	Aeroporto aeroportos[MAXAEROPORTOS];
-	Voo popular[1]; //Declara vetor com 1 dimensao para que a variavel seja passada por referencia nas funcoes
+	Voo popular[1]; //vetor de dimensao 1 para que seja passado por referencia nas funcoes
 	char c;
-	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS],int1_input;
+	int numero_aeroportos = 0, grafo[MAXAEROPORTOS][MAXAEROPORTOS], int1_input;
 	long int total_voos[1];
 	memset(grafo, 0, sizeof(grafo[0][0]) * MAXAEROPORTOS * MAXAEROPORTOS); // Inicializa entradas do grafo a 0
+
 	while (1) {
 		c = getchar();
 		switch (c){
+
 			case 'A':
 				CriaAeroporto(aeroportos, numero_aeroportos);
 				numero_aeroportos++;
 				qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 				break;
+
 			case 'I':
 				AlteraCapacidadeAeroporto(aeroportos, numero_aeroportos);
 				break;
@@ -92,15 +94,14 @@ int main(){
 				break;
 				
 			case 'L':
-				scanf("%d",&int1_input);
+				scanf("%d", &int1_input);
 				if(int1_input == 0){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosCronologicamente);
 					ImprimeAeroportos(aeroportos, numero_aeroportos);
 					// Mantem aeroportos ordenados por ID para nao haver problema com a Pesquisa Binaria
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome); 
 				} 
-				else 
-				if(int1_input==1){
+				else if(int1_input == 1){
 					qsort(aeroportos, numero_aeroportos, sizeof(Aeroporto), OrdenaAeroportosNome);
 					ImprimeAeroportos(aeroportos, numero_aeroportos);
 				} else {

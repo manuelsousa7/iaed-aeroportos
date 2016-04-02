@@ -5,7 +5,6 @@
 *               b:  ponteiro para aeroporto
 *
 * Returns: int 	retorna valor logico da comparacao de 2 id's de Aeroportos diferentes
-* Side-Effects: none
 * Description:  compara id's de aeroportos diferentes, usado na bsearch e qsort
 *****************************************************************************************/
 int OrdenaAeroportosNome(const void *a, const void *b) { 
@@ -21,7 +20,6 @@ int OrdenaAeroportosNome(const void *a, const void *b) {
 *               b:  ponteiro para aeroporto
 *
 * Returns: int 	retorna valor logico da comparacao das variaveis que definem ordem cronologica dos aeroportos
-* Side-Effects: none
 * Description:  compara ordem cronologica de 2 aeroportos, usado na bsearch e qsort
 *****************************************************************************************/
 int OrdenaAeroportosCronologicamente(const void *a, const void *b) { 
@@ -37,7 +35,6 @@ int OrdenaAeroportosCronologicamente(const void *a, const void *b) {
 *               b:  ponteiro para histrograma
 *
 * Returns: int 	retorna valor logico da comparacao das variaveis soma de 2 histrogramas
-* Side-Effects: none
 * Description:  compara qual a soma maior entre 2 hsitrogramas, usado para qsort
 *****************************************************************************************/
 int OrdenaHistograma(const void *a, const void *b) { 
@@ -54,7 +51,6 @@ int OrdenaHistograma(const void *a, const void *b) {
 *				numero_aeroportos: 	numero de aeroportos atuais (abertos e fechados)	
 *
 * Returns: int 	retorna o indice apos procurar, caso nao encontre retorna -1
-* Side-Effects: none
 * Complexity: 	O(log N) average-worst case | O(1) best case
 * Description:  procura de forma eficiente o valor de uma soma na estrutura do histograma
 *****************************************************************************************/
@@ -77,7 +73,6 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 *				n_hist:		numero de somas diferentes ja existentes no array de estruturas
 *
 * Returns: int 	retorna o indice apos procurar, caso nao encontre retorna -1
-* Side-Effects: none
 * Complexity: 	O(log N) average-worst case | O(1) best case
 * Description:  procura de forma eficiente o valor de uma soma na estrutura do histograma
 *****************************************************************************************/
@@ -98,10 +93,9 @@ int PesquisaBinariaHistograma(Histograma hist[], int a_procurar, int n_hist){
 * Arguments:	hist:   	estrutura dos elementos do histrograma (todos)
 *				n_hist:		numero de somas diferentes ja existentes no array de estruturas
 *
-* Returns: void
-* Side-Effects: none
+* Returns: void 
 * Complexity: 	O(N^2) worst case perfomance | O(n) best case perfomance
-* Description:  ordena somas do histograma por ordem decrescente
+* Description:  ordena somas do histograma por ordem decrescente utilizando InsertionSort
 *****************************************************************************************/
 void InsertionSortHistrograma(Histograma hist[], int n_hist){
     int i, j;

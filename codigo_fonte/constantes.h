@@ -8,7 +8,11 @@
 #define MAXID 4
 #define MAXAEROPORTOS 1001
 
+
+
 /*structs utilizados pelo programa*/
+
+//representacao dos aeroportos
 typedef struct{
 	char id[MAXID];
 	int capacidade;
@@ -20,11 +24,13 @@ typedef struct{
 	int chegam;
 } Aeroporto;
 
+//representacao do histograma
 typedef struct{
 	int soma;
 	int n;
 } Histograma;
 
+//representacao do voo mais popular
 typedef struct{
 	int voos;
 	char partida[MAXID];
@@ -32,6 +38,8 @@ typedef struct{
 	char chegada[MAXID];
 	int chegada_crono;
 } Voo;
+
+
 
 /*funcoes_auxiliares.h*/
 int OrdenaAeroportosNome(const void *a, const void *b);
