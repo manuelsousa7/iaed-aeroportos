@@ -361,7 +361,7 @@ void AeroportoConectado(Aeroporto aeroportos[], int numero_aeroportos){
 * Description:  imprime histograma ordenado composto pelo N aeroportos com X total de voos (de cada aeroporto) diferentes
 *****************************************************************************************/
 void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
-	Histograma hist[MAXAEROPORTOS];
+    Histograma hist[MAXAEROPORTOS];
     int index, i;
     int n_hist = 1;
 
@@ -370,8 +370,8 @@ void HistogramaImprime(Aeroporto aeroportos[], int numero_aeroportos){
 
     for (i = 1; i < numero_aeroportos; i++){
 
-    		//Nao e usado qsort() porque e menos eficiente a ordenar vetores ja pre-ordenados
-    		InsertionSortHistrograma(hist, n_hist); 
+    	    //Nao e usado qsort() porque e menos eficiente a ordenar vetores ja pre-ordenados
+    	    InsertionSortHistrograma(hist, n_hist); 
             index = PesquisaBinariaHistograma(hist, aeroportos[i].soma, n_hist);
             if(index == -1){
                 hist[n_hist].soma = aeroportos[i].soma;

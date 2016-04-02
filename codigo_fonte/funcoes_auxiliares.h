@@ -77,7 +77,7 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 * Description:  procura de forma eficiente o valor de uma soma na estrutura do histograma
 *****************************************************************************************/
 int PesquisaBinariaHistograma(Histograma hist[], int a_procurar, int n_hist){ 
-	Histograma key, *res;
+    Histograma key, *res;
     key.soma = a_procurar;
     res = bsearch(&key, hist, n_hist, sizeof(Histograma), OrdenaHistograma);
     size_t index = res - hist;
