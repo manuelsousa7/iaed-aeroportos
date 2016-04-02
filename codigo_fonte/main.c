@@ -4,17 +4,17 @@
 * Revision:
 * NAME:        Rede de Aeroportos - IST/IAED - 2015/2016 2º Semestre
 * SYNOPSIS:    #include <stdio.h>
-			   #include <string.h>
-			   #include <stdbool.h> - bool's
-			   #include <stdlib.h> 	- qsort + bsearch
-			   #include "constantes.h"
-			   #include "funcoes_comandos.h"
-			   #include "funcoes_auxiliares.h"
+	       #include <string.h>
+	       #include <stdbool.h> - bool's
+	       #include <stdlib.h> 	- qsort + bsearch
+	       #include "constantes.h"
+	       #include "funcoes_comandos.h"
+	       #include "funcoes_auxiliares.h"
 * DESCRIPTION: Rede de Aeroportos - funcao main.
 * DIAGNOSTICS: tested
 * USAGE:       make clean
-			   make all
-			   make run
+	       make all
+	       make run
 *****************************************************************************/
 #include <stdio.h>
 #include <string.h>

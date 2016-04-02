@@ -48,7 +48,7 @@ int OrdenaHistograma(const void *a, const void *b) {
 *
 * Arguments:	aeroportos:   		estrutura dos aeroportos (abertos e fechados)
 *               a_procurar:  		valor a procurar
-*				numero_aeroportos: 	numero de aeroportos atuais (abertos e fechados)	
+*		numero_aeroportos: 	numero de aeroportos atuais (abertos e fechados)	
 *
 * Returns: int 	retorna o indice apos procurar, caso nao encontre retorna -1
 * Complexity: 	O(log N) average-worst case | O(1) best case
@@ -69,8 +69,8 @@ int PesquisaBinariaAeroportos (Aeroporto aeroportos[], char a_procurar[], int nu
 * PesquisaBinariaHistograma()
 *
 * Arguments:	hist:   	estrutura dos elementos do histrograma (todos)
-*               a_procurar: valor a procurar
-*				n_hist:		numero de somas diferentes ja existentes no array de estruturas
+*               a_procurar: 	valor a procurar
+*		n_hist:		numero de somas diferentes ja existentes no array de estruturas
 *
 * Returns: int 	retorna o indice apos procurar, caso nao encontre retorna -1
 * Complexity: 	O(log N) average-worst case | O(1) best case
@@ -91,7 +91,7 @@ int PesquisaBinariaHistograma(Histograma hist[], int a_procurar, int n_hist){
 * InsertionSortHistrograma()
 *
 * Arguments:	hist:   	estrutura dos elementos do histrograma (todos)
-*				n_hist:		numero de somas diferentes ja existentes no array de estruturas
+*		n_hist:		numero de somas diferentes ja existentes no array de estruturas
 *
 * Returns: void 
 * Complexity: 	O(N^2) worst case perfomance | O(n) best case perfomance
